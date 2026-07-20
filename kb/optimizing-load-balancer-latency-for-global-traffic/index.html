@@ -251,10 +251,54 @@ tailwind.config = {
 </script>
 </head>
 <body class="bg-surface font-body-lg text-on-surface antialiased overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 w-full h-20">
+    <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+        <div class="flex items-center gap-xs">
+            <img src="/wp-content/uploads/2026/07/domain-web-hosting-logo.png" alt="Domain Web Hosting Logo" class="h-8 w-auto">
+            <a class="text-body-lg font-headline-lg font-bold tracking-tighter text-on-surface" href="index.html">
+                Domain Web Hosting            </a>
+        </div>
+        
+        <nav class="hidden md:flex items-center space-x-md">
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/hosting/">Hosting</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/domain-registration/">Domains</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/website-development/">Web Development</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/portfolio/">Portfolio</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/contact/">Support</a>
+            </nav>
 
+        <div class="flex items-center gap-sm">
+            <a href="https://my.domainwebhosting.co/" class="font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95 inline-block rounded">Client Login</a>
+            <a href="/start-your-project/" class="font-label-md text-label-md px-6 py-2.5 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95 inline-block">Start Your Project</a>
+        </div>
+    </div>
+</header>
 
-<main class="max-w-3xl mx-auto px-gutter py-3xl mt-16 min-h-[70vh]">
-<article class="article-content font-body-md text-body-md text-on-surface-variant">
+<main class="max-w-[1440px] mx-auto px-gutter py-3xl mt-16 min-h-[70vh] flex gap-12">
+<div class="flex-1 max-w-[840px]">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-lg">
+            <a href="/knowledge-base/" class="hover:text-primary transition-colors">Knowledge Base</a>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="text-on-surface font-bold">Optimizing Load Balancer Latency for Global Traffic</span>
+        </nav>
+
+        <!-- Article Header -->
+        <header class="mb-lg">
+            <h1 class="font-display-lg text-display-lg mb-sm text-primary leading-tight">Optimizing Load Balancer Latency for Global Traffic</h1>
+            <div class="flex flex-wrap gap-6 items-center text-label-md font-label-md text-on-surface-variant">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                    Last updated: Jul 2026                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">folder</span>
+                    Category: Guides
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-content font-body-md text-body-md text-on-surface-variant">
             <p>When operating an enterprise-grade infrastructure, high latency can severely impact the performance of your applications. For global traffic, a single regional load balancer is often insufficient. In this technical article, we detail advanced strategies for optimizing load balancer latency across distributed geographic regions, ensuring a seamless experience for all users.</p>
 <h2>The Challenge of Global Latency</h2>
 <p>Latency is the time it takes for data to travel from the user to the server and back. When a user in Tokyo requests data from a server in New York, the physical distance inevitably introduces latency, often exceeding 150-200 milliseconds. While this may sound small, in modern microservices architectures where dozens of requests are made to render a single page, this latency compounds, resulting in sluggish performance.</p>
@@ -276,6 +320,32 @@ tailwind.config = {
 <h2>Conclusion</h2>
 <p>Optimizing load balancer latency for global traffic requires a multi-layered approach. By combining latency-based DNS routing, Anycast networks, and meticulous connection management at the edge, you can drastically reduce response times and deliver a truly global, high-performance application.</p>
         </article>
+
+        <!-- Feedback Section -->
+        <section class="mt-xl py-lg border-t border-outline-variant flex flex-col items-center">
+            <h4 class="font-headline-md text-headline-md mb-sm text-on-surface">Was this article helpful?</h4>
+            <div class="flex gap-4">
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-primary/5 hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_up</span> Yes
+                </button>
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-error/5 hover:border-error transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_down</span> No
+                </button>
+            </div>
+        </section>
+
+        <!-- Post Navigation -->
+        <footer class="mt-lg pt-lg border-t border-outline-variant flex justify-between">
+                        <div></div>
+            
+                        <a href="/kb/configuring-auto-scaling-groups-with-terraform/" class="group flex flex-col items-end gap-1">
+                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Next</span>
+                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    Configuring Auto-scaling Groups with Terraform                    <span class="material-symbols-outlined">arrow_forward</span>
+                </span>
+            </a>
+                    </footer>
+    </div>
 </main>
 
 <footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full">

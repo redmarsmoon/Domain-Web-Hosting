@@ -251,10 +251,54 @@ tailwind.config = {
 </script>
 </head>
 <body class="bg-surface font-body-lg text-on-surface antialiased overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 w-full h-20">
+    <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+        <div class="flex items-center gap-xs">
+            <img src="/wp-content/uploads/2026/07/domain-web-hosting-logo.png" alt="Domain Web Hosting Logo" class="h-8 w-auto">
+            <a class="text-body-lg font-headline-lg font-bold tracking-tighter text-on-surface" href="index.html">
+                Domain Web Hosting            </a>
+        </div>
+        
+        <nav class="hidden md:flex items-center space-x-md">
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/hosting/">Hosting</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/domain-registration/">Domains</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/website-development/">Web Development</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/portfolio/">Portfolio</a>
+                <a class="font-label-md text-label-md pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full" href="/contact/">Support</a>
+            </nav>
 
+        <div class="flex items-center gap-sm">
+            <a href="https://my.domainwebhosting.co/" class="font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95 inline-block rounded">Client Login</a>
+            <a href="/start-your-project/" class="font-label-md text-label-md px-6 py-2.5 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95 inline-block">Start Your Project</a>
+        </div>
+    </div>
+</header>
 
-<main class="max-w-3xl mx-auto px-gutter py-3xl mt-16 min-h-[70vh]">
-<article class="article-content font-body-md text-body-md text-on-surface-variant">
+<main class="max-w-[1440px] mx-auto px-gutter py-3xl mt-16 min-h-[70vh] flex gap-12">
+<div class="flex-1 max-w-[840px]">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-lg">
+            <a href="/knowledge-base/" class="hover:text-primary transition-colors">Knowledge Base</a>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="text-on-surface font-bold">Implementing Mutual TLS for Microservices</span>
+        </nav>
+
+        <!-- Article Header -->
+        <header class="mb-lg">
+            <h1 class="font-display-lg text-display-lg mb-sm text-primary leading-tight">Implementing Mutual TLS for Microservices</h1>
+            <div class="flex flex-wrap gap-6 items-center text-label-md font-label-md text-on-surface-variant">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                    Last updated: Jul 2026                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">folder</span>
+                    Category: Guides
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-content font-body-md text-body-md text-on-surface-variant">
             <p>As microservice architectures become increasingly complex, securing the communication between internal services is just as critical as securing the public perimeter. Mutual TLS (mTLS) is the gold standard for Zero Trust networking. In this comprehensive guide, we explain the mechanics of mTLS and how to implement it effectively within a modern microservices ecosystem.</p>
 <h2>The Need for Zero Trust Networking</h2>
 <p>Historically, corporate networks operated on a &#8220;castle-and-moat&#8221; model. Once a request bypassed the external firewall, it was largely trusted. In a microservices architecture running on cloud infrastructure, this model is dangerously flawed. If an attacker breaches a single weak service, they can traverse the internal network unhindered to access sensitive databases or critical APIs.</p>
@@ -280,6 +324,37 @@ tailwind.config = {
 <h2>Conclusion</h2>
 <p>Implementing Mutual TLS is a foundational step in securing a microservices architecture. By utilizing a Service Mesh to abstract the complexity of certificate management and proxy routing, organizations can achieve a true Zero Trust environment, ensuring that all internal communication is authenticated, encrypted, and authorized.</p>
         </article>
+
+        <!-- Feedback Section -->
+        <section class="mt-xl py-lg border-t border-outline-variant flex flex-col items-center">
+            <h4 class="font-headline-md text-headline-md mb-sm text-on-surface">Was this article helpful?</h4>
+            <div class="flex gap-4">
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-primary/5 hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_up</span> Yes
+                </button>
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-error/5 hover:border-error transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_down</span> No
+                </button>
+            </div>
+        </section>
+
+        <!-- Post Navigation -->
+        <footer class="mt-lg pt-lg border-t border-outline-variant flex justify-between">
+                        <a href="/kb/configuring-auto-scaling-groups-with-terraform/" class="group flex flex-col items-start gap-1">
+                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Previous</span>
+                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:-translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Configuring Auto-scaling Groups with Terraform                </span>
+            </a>
+            
+                        <a href="/kb/troubleshooting-database-connection-pooling/" class="group flex flex-col items-end gap-1">
+                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Next</span>
+                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    Troubleshooting Database Connection Pooling                    <span class="material-symbols-outlined">arrow_forward</span>
+                </span>
+            </a>
+                    </footer>
+    </div>
 </main>
 
 <footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full">
