@@ -315,171 +315,39 @@ tailwind.config = {
 
 <!-- Main Content Shell -->
 <main class="ml-64 mt-16 p-gutter flex gap-12 max-w-[1440px] mx-auto min-h-screen">
-    
-    
-    <!-- Left Section: Article Content -->
-    <div class="flex-1 max-w-[840px]">
-        <!-- Breadcrumbs -->
-        <nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-lg">
-            <a href="/knowledge-base/" class="hover:text-primary transition-colors">Knowledge Base</a>
-            <span class="material-symbols-outlined text-sm">chevron_right</span>
-            <span class="text-on-surface font-bold">Configuring Auto-scaling Groups with Terraform</span>
-        </nav>
-
-        <!-- Article Header -->
-        <header class="mb-lg">
-            <h1 class="font-display-lg text-display-lg mb-sm text-primary leading-tight">Configuring Auto-scaling Groups with Terraform</h1>
-            <div class="flex flex-wrap gap-6 items-center text-label-md font-label-md text-on-surface-variant">
-                <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
-                    Last updated: Jul 2026                </div>
-                <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[20px]">folder</span>
-                    Category: Guides
-                </div>
-            </div>
-        </header>
-
-        <!-- Article Body -->
-        <article class="article-content font-body-md text-body-md text-on-surface-variant">
-            <p>Infrastructure as Code (IaC) has revolutionized how we provision and manage cloud resources. HashiCorp&#8217;s Terraform is an industry standard for defining infrastructure declaratively. In this guide, we will walk through the process of configuring robust Auto-scaling Groups (ASGs) using Terraform, ensuring your applications can dynamically respond to traffic fluctuations while maintaining cost efficiency.</p>
-<h2>Understanding Auto-scaling Mechanics</h2>
-<p>An Auto-scaling Group is a logical grouping of compute instances (like AWS EC2 or Google Cloud Compute Engine) that share similar characteristics. The primary purpose of an ASG is to automatically adjust the number of running instances based on predefined conditions. This ensures you have enough compute power during peak traffic and minimizes costs during idle periods.</p>
-<p>Effective auto-scaling relies on metrics (such as CPU utilization, memory usage, or network I/O) and alarms. When a metric crosses a threshold (e.g., CPU exceeds 75% for 3 minutes), an alarm triggers a scaling policy to launch new instances (scale out) or terminate existing ones (scale in).</p>
+<div class="max-w-3xl mx-auto px-gutter py-xl">
+<h2>Introduction</h2>
+        <p>Auto-scaling groups (ASGs) are essential for maintaining application availability and scaling your compute capacity up or down automatically according to conditions you define. Terraform provides an elegant way to define these resources as infrastructure-as-code.</p>
+<h2>Prerequisites</h2>
+        <ul>
+            <li>Terraform installed on your local machine</li>
+            <li>Cloud provider CLI configured with appropriate permissions</li>
+            <li>Basic knowledge of HCL (HashiCorp Configuration Language)</li>
+        </ul>
 <h2>Defining the Launch Template</h2>
-<p>Before creating the ASG, you must define a Launch Template or Launch Configuration. This template specifies the instance type, Amazon Machine Image (AMI), security groups, SSH keys, and user data scripts required to bootstrap the instance. Using Terraform, a launch template looks like this:</p>
-<pre class="code-block p-md rounded-lg my-md overflow-x-auto"><code>resource "aws_launch_template" "app_template" {
-  name_prefix   = "app-node-"
-  image_id      = var.ami_id
-  instance_type = "t3.medium"
-  
-  vpc_security_group_ids = [aws_security_group.app_sg.id]
-  
-  user_data = filebase64("${path.module}/scripts/init.sh")
-
-  lifecycle {
-    create_before_destroy = true
-  }
+        <p>Before creating an ASG, you need a launch template that specifies the instance configuration:</p>
+        <pre><code>resource "aws_launch_template" "app_template" {
+  name_prefix   = "app-template-"
+  image_id      = "ami-0c55b159cbfafe1f0"
+  instance_type = "t3.micro"
 }</code></pre>
-<p>Notice the `create_before_destroy` lifecycle hook. This is crucial for zero-downtime updates; Terraform will create the new template and instances before destroying the old ones during an update.</p>
-<h2>Configuring the Auto-scaling Group</h2>
-<p>With the template defined, we can construct the ASG. You must specify the VPC subnets where instances will launch, and define the minimum, maximum, and desired capacity.</p>
-<pre class="code-block p-md rounded-lg my-md overflow-x-auto"><code>resource "aws_autoscaling_group" "app_asg" {
-  name                = "production-app-asg"
-  vpc_zone_identifier = aws_subnet.private_subnets[*].id
-  
-  min_size         = 2
-  max_size         = 10
-  desired_capacity = 2
-
-  target_group_arns = [aws_lb_target_group.app_tg.arn]
-  health_check_type = "ELB"
-  health_check_grace_period = 300
-
-  launch_template {
-    id      = aws_launch_template.app_template.id
-    version = "$Latest"
-  }
-  
-  tag {
-    key                 = "Name"
-    value               = "App-Node"
-    propagate_at_launch = true
-  }
-}</code></pre>
-<h2>Implementing Scaling Policies</h2>
-<p>To make the ASG dynamic, we attach scaling policies. Target Tracking Scaling Policies are often the most effective. You define a target metric (e.g., maintain average CPU utilization at 60%), and the cloud provider automatically handles the math to scale in and out.</p>
-<pre class="code-block p-md rounded-lg my-md overflow-x-auto"><code>resource "aws_autoscaling_policy" "cpu_tracking" {
-  name                   = "cpu-tracking-policy"
-  policy_type            = "TargetTrackingScaling"
-  autoscaling_group_name = aws_autoscaling_group.app_asg.name
-
-  target_tracking_configuration {
-    predefined_metric_specification {
-      predefined_metric_type = "ASGAverageCPUUtilization"
-    }
-    target_value = 60.0
-  }
-}</code></pre>
+<h2>Creating the Auto-scaling Group</h2>
+        <p>Now, define the ASG resource, referencing the launch template:</p>
+        <pre><code>resource "aws_autoscaling_group" "app_asg" {
+  desired_capacity   = 2
+  max_size           = 5
+  min_size           = 1
+  vpc_zone_identifier = ["subnet-12345678", "subnet-87654321"]
+<p>launch_template {<br />
+    id      = aws_launch_template.app_template.id<br />
+    version = "$Latest"<br />
+  }<br />
+}</code></pre></p>
 <h2>Conclusion</h2>
-<p>By leveraging Terraform to manage your Auto-scaling Groups, you ensure that your infrastructure is version-controlled, repeatable, and highly available. Proper configuration of launch templates, health checks, and target tracking policies will create a robust environment that effortlessly handles dynamic workloads.</p>
-        </article>
+        <p>By defining your ASG using Terraform, you ensure infrastructure consistency and enable version control for your cloud resources.</p>
 
-        <!-- Feedback Section -->
-        <section class="mt-xl py-lg border-t border-outline-variant flex flex-col items-center">
-            <h4 class="font-headline-md text-headline-md mb-sm text-on-surface">Was this article helpful?</h4>
-            <div class="flex gap-4">
-                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-primary/5 hover:border-primary transition-all">
-                    <span class="material-symbols-outlined text-[20px]">thumb_up</span> Yes
-                </button>
-                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-error/5 hover:border-error transition-all">
-                    <span class="material-symbols-outlined text-[20px]">thumb_down</span> No
-                </button>
-            </div>
-        </section>
-
-        <!-- Post Navigation -->
-        <footer class="mt-lg pt-lg border-t border-outline-variant flex justify-between">
-                        <a href="/kb/optimizing-load-balancer-latency-for-global-traffic/" class="group flex flex-col items-start gap-1">
-                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Previous</span>
-                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:-translate-x-1 transition-transform">
-                    <span class="material-symbols-outlined">arrow_back</span>
-                    Optimizing Load Balancer Latency for Global Traffic                </span>
-            </a>
-            
-                        <a href="/kb/implementing-mutual-tls-for-microservices/" class="group flex flex-col items-end gap-1">
-                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Next</span>
-                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Implementing Mutual TLS for Microservices                    <span class="material-symbols-outlined">arrow_forward</span>
-                </span>
-            </a>
-                    </footer>
-    </div>
-
-    <!-- Right Sidebar -->
-    <aside class="w-72 hidden xl:block sticky top-md h-fit">
-        <!-- Support CTA -->
-        <div class="bg-primary text-white p-md rounded-xl shadow-lg shadow-primary/10 relative overflow-hidden mb-md">
-            <div class="relative z-10">
-                <h5 class="font-label-md text-label-md font-bold mb-2">Still need help?</h5>
-                <p class="text-xs text-white/80 mb-4">Our expert support engineers are available 24/7 for technical assistance.</p>
-                <a href="/contact/" class="block text-center w-full bg-white text-primary py-2 rounded-lg font-label-md text-label-md font-bold hover:bg-surface-container-highest transition-colors">
-                    Open Support Ticket
-                </a>
-            </div>
-            <!-- Subtle background decoration -->
-            <div class="absolute -right-4 -bottom-4 opacity-20">
-                <span class="material-symbols-outlined text-[80px]">contact_support</span>
-            </div>
-        </div>
-
-        <!-- Related Articles -->
-        <div class="mb-md">
-            <h5 class="font-label-md text-label-md font-bold text-on-surface mb-4">Related Articles</h5>
-            <ul class="space-y-4">
-                                <li>
-                    <a href="/kb/optimizing-load-balancer-latency-for-global-traffic/" class="group">
-                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Optimizing Load Balancer Latency for Global Traffic</span>
-                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
-                    </a>
-                </li>
-                                <li>
-                    <a href="/kb/implementing-mutual-tls-for-microservices/" class="group">
-                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Implementing Mutual TLS for Microservices</span>
-                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
-                    </a>
-                </li>
-                                <li>
-                    <a href="/kb/troubleshooting-database-connection-pooling/" class="group">
-                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Troubleshooting Database Connection Pooling</span>
-                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
-                    </a>
-                </li>
-                            </ul>
-        </div>
-    </aside>
-
-    </main>
+</div>
+</main>
 
 <script>
     // Simple micro-interaction for code copy
