@@ -1,0 +1,161 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Portfolio - TechNexus</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fbf8ff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#8b4bfc",
+                        "surface-dim": "#d9d9e4",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-tint": "#004ced",
+                        "tertiary-fixed": "#dae2fd",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#003ec7",
+                        "inverse-surface": "#2f3039",
+                        "on-primary-fixed": "#001452",
+                        "secondary": "#712ae2",
+                        "tertiary": "#2e364b",
+                        "tertiary-container": "#454d63",
+                        "primary": "#002b92",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "outline-variant": "#c4c5d7",
+                        "surface-variant": "#e2e1ed",
+                        "on-tertiary-fixed-variant": "#3e465c",
+                        "primary-fixed": "#dde1ff",
+                        "inverse-primary": "#b7c4ff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ededf8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e7f3",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "on-surface-variant": "#434654",
+                        "inverse-on-surface": "#f0f0fb",
+                        "on-tertiary-container": "#b6bed8",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f2fe",
+                        "background": "#fbf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "accent-purple": "#7c3aed",
+                        "surface-container-highest": "#e2e1ed",
+                        "on-secondary-fixed": "#25005a",
+                        "on-tertiary-fixed": "#131b2f",
+                        "secondary-fixed": "#eaddff",
+                        "on-background": "#1a1b23",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-container": "#adbcff",
+                        "outline": "#737688"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "sm": "16px"
+                    },
+                    "fontFamily": {
+                        "mono-sm": ["Geist"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-sm": ["13px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script><style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .flat-plus-card {
+            background-color: theme('colors.surface-container-lowest');
+            border: 1px solid theme('colors.surface-variant');
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+        
+        .flat-plus-card:hover {
+            border-color: theme('colors.primary');
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary-container');
+            font-weight: 500;
+        }
+        
+        .soft-fill-chip {
+            background-color: rgba(0, 43, 146, 0.1); /* primary with 10% opacity */
+            color: theme('colors.primary');
+        }
+    </style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><!-- TopNavBar --><nav class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl text-primary dark:text-primary-fixed-dim font-label-md text-label-md w-full sticky top-0 z-50 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm transition-all duration-300"><div class="max-w-container-max mx-auto px-md py-sm flex items-center justify-between"><a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed hover:scale-[1.02] active:scale-[0.98] transition-transform flex items-center gap-2" href="/"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                TechNexus
+            </a><div class="hidden md:flex items-center gap-8"><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:opacity-80 transition-all duration-300" href="#">Solutions</a><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:opacity-80 transition-all duration-300" href="/hosting/">Hosting</a><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:opacity-80 transition-all duration-300" href="#">Pricing</a><a aria-current="page" class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1 hover:opacity-80 transition-all duration-300" href="/portfolio/">Portfolio</a><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary hover:opacity-80 transition-all duration-300" href="#">Resources</a></div><div class="hidden md:flex items-center gap-4"><a class="text-on-surface-variant hover:text-primary transition-colors hover:scale-[1.02] active:scale-[0.98]" href="/contact/">Support</a><a class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-transform" href="#">Get Started</a></div><button class="md:hidden text-primary p-2"><span class="material-symbols-outlined">menu</span></button></div></nav><!-- Main Content Canvas --><main class="flex-grow flex flex-col w-full"><!-- Hero Section --><section class="w-full max-w-container-max mx-auto px-4 md:px-md pt-xl pb-lg md:py-xl flex flex-col items-center text-center"><h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 max-w-4xl tracking-tight">
+                Engineering Excellence. <span class="text-primary">Delivered.</span></h1><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+                Bridging the gap between high-performance infrastructure and exceptional user experience. Explore our track record of transforming complex challenges into robust, scalable solutions.
+            </p></section><!-- Filter Bar --><section class="w-full border-y border-outline-variant/30 bg-surface-container-lowest sticky top-[73px] z-40"><div class="max-w-container-max mx-auto px-4 md:px-md overflow-x-auto no-scrollbar"><div class="flex items-center space-x-2 py-4 min-w-max"><button class="filter-btn active px-4 py-1.5 rounded-full font-label-md text-label-md border border-transparent transition-colors">All Projects</button><button class="filter-btn px-4 py-1.5 rounded-full font-label-md text-label-md border border-outline-variant/50 text-on-surface-variant hover:border-primary/50 transition-colors bg-surface-container-lowest">Custom Web Apps</button><button class="filter-btn px-4 py-1.5 rounded-full font-label-md text-label-md border border-outline-variant/50 text-on-surface-variant hover:border-primary/50 transition-colors bg-surface-container-lowest">Enterprise Infrastructure</button><button class="filter-btn px-4 py-1.5 rounded-full font-label-md text-label-md border border-outline-variant/50 text-on-surface-variant hover:border-primary/50 transition-colors bg-surface-container-lowest">E-commerce</button><button class="filter-btn px-4 py-1.5 rounded-full font-label-md text-label-md border border-outline-variant/50 text-on-surface-variant hover:border-primary/50 transition-colors bg-surface-container-lowest">AI Solutions</button></div></div></section><!-- Project Grid --><section class="w-full max-w-container-max mx-auto px-4 md:px-md py-lg md:py-xl"><div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter"><!-- Project Card 1: Nexus Cloud Dashboard --><article class="flat-plus-card rounded-xl overflow-hidden flex flex-col group cursor-pointer"><div class="relative h-64 md:h-80 w-full overflow-hidden bg-surface-container"><div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern dark-mode cloud infrastructure dashboard interface displayed on a high-resolution monitor. The UI features complex data visualizations, glowing neon blue graphs, and precise typography. The aesthetic is highly technical, minimalist, and professional, reflecting high-performance enterprise software. Subtle ambient lighting highlights the screen." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0A4_eiDyZTE4_Dea-CHdib9J-MAG10JkE1MCdZ-5fsyz7KP4cyv1ljHAlPabiRtDeF0Wu6l7mO-UPTHmWqz1qCSJXLBNXERTqnqFYdikqnMq_XVGzU7XyGDAptjotpov26TZ3fKpEYJVXtIgaxA0mcr3to4Ch1_amr5L7GGsJubvl0uY-Au72Dff_DYh7m4t6wUg42Hq5XvOXJWaoMVR2uW1cnfiJV5pLJPaS7JQ86JG6T8GzHWh_')"></div><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-4 left-4 flex gap-2"><span class="soft-fill-chip px-3 py-1 rounded-full font-mono-sm text-mono-sm font-medium">Enterprise Infrastructure</span></div></div><div class="p-6 md:p-8 flex flex-col flex-grow"><div class="flex justify-between items-start mb-4"><h2 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Nexus Cloud Dashboard</h2><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors -rotate-45">arrow_forward</span></div><p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                            A unified control plane for managing multi-cloud deployments, providing real-time analytics and automated scaling for enterprise workloads.
+                        </p><div class="flex flex-wrap gap-2 mb-8"><span class="border border-outline-variant/50 text-on-surface-variant px-2 py-1 rounded font-mono-sm text-mono-sm">React</span><span class="border border-outline-variant/50 text-on-surface-variant px-2 py-1 rounded font-mono-sm text-mono-sm">Node.js</span><span class="border border-outline-variant/50 text-on-surface-variant px-2 py-1 rounded font-mono-sm text-mono-sm">Kubernetes</span></div><div class="mt-auto grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-6"><div><div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Reliability</div><div class="font-headline-md text-headline-md text-primary">99.99%</div><div class="font-mono-sm text-mono-sm text-on-surface-variant">Uptime SLA Maintained</div></div><div><div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Performance</div><div class="font-headline-md text-headline-md text-primary">-40%</div><div class="font-mono-sm text-mono-sm text-on-surface-variant">Latency Reduction</div></div></div></div></article><!-- Project Card 2: Aether E-commerce --><article class="flat-plus-card rounded-xl overflow-hidden flex flex-col group cursor-pointer"><div class="relative h-64 md:h-80 w-full overflow-hidden bg-surface-container"><div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist e-commerce storefront interface shown on a tablet device. The design features large product imagery, generous whitespace, and precise typography in a light-mode aesthetic. High-contrast elements guide the user journey. The setting is bright and professional, emphasizing a seamless, modern shopping experience." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmS6SvAu4-_ZlA75KamHyhjIVyVtNqPSStRRqviyjXHzIXpXQYuoikLkrUy9vNY-RgzwEaydVtogEO9STd5VynJ94qH8_dCdtwk7KlvB9UpoRwFvu7Dn7KSrUeULuB9FVXuI5rqxCKIOYkxRoKxLhwBuSDHWUeVNNbZhSMzgmXCJs-49Sej9KkwIEUWdxRGIcJ31qhcvCRwojBMl1d6FJruXsKGA8TyQrzCXczLXfQv6rObQ3ou9eC')"></div><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-4 left-4 flex gap-2"><span class="bg-accent-purple/10 text-accent-purple px-3 py-1 rounded-full font-mono-sm text-mono-sm font-medium">E-commerce</span></div></div><div class="p-6 md:p-8 flex flex-col flex-grow"><div class="flex justify-between items-start mb-4"><h2 class="font-headline-md text-headline-md text-on-surface group-hover:text-accent-purple transition-colors">Aether E-commerce Platform</h2><span class="material-symbols-outlined text-outline group-hover:text-accent-purple transition-colors -rotate-45">arrow_forward</span></div><p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                            A high-performance headless commerce architecture designed for global scale, featuring edge-rendered dynamic content and localized checkout flows.
+                        </p><div class="flex flex-wrap gap-2 mb-8"><span class="border border-outline-variant/50 text-on-surface-variant px-2 py-1 rounded font-mono-sm text-mono-sm">Next.js</span><span class="border border-outline-variant/50 text-on-surface-variant px-2 py-1 rounded font-mono-sm text-mono-sm">GraphQL</span><span class="border border-outline-variant/50 text-on-surface-variant px-2 py-1 rounded font-mono-sm text-mono-sm">Edge Hosting</span></div><div class="mt-auto grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-6"><div><div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Speed</div><div class="font-headline-md text-headline-md text-accent-purple">&lt;50ms</div><div class="font-mono-sm text-mono-sm text-on-surface-variant">Time to Interactive</div></div><div><div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Impact</div><div class="font-headline-md text-headline-md text-accent-purple">2.4x</div><div class="font-mono-sm text-mono-sm text-on-surface-variant">Conversion Rate Lift</div></div></div></div></article></div></section><!-- CTA Section --><section class="w-full bg-surface-container-low py-xl mt-lg"><div class="max-w-3xl mx-auto px-4 md:px-md text-center"><h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">
+                    Have a project in mind?
+                </h2><p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                    Let's build the future together. Partner with our engineering team to construct robust, scalable solutions for your next big idea.
+                </p><div class="flex flex-col sm:flex-row justify-center gap-4"><button class="bg-accent-purple text-on-primary px-8 py-3 rounded font-label-md text-label-md hover:scale-[1.02] active:scale-[0.98] transition-transform">
+                        Start a Project
+                    </button><button class="border border-outline text-on-surface px-8 py-3 rounded font-label-md text-label-md hover:bg-surface-variant/50 transition-colors">
+                        View Hosting Plans
+                    </button></div></div></section></main><!-- Footer --><script>
+        // Simple filter interaction for demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active from all
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-primary-container', 'text-on-primary-container', 'border-transparent', 'font-medium');
+                        b.classList.add('bg-surface-container-lowest', 'border-outline-variant/50', 'text-on-surface-variant');
+                    });
+                    
+                    // Add active to clicked
+                    btn.classList.add('active', 'bg-primary-container', 'text-on-primary-container', 'border-transparent', 'font-medium');
+                    btn.classList.remove('bg-surface-container-lowest', 'border-outline-variant/50', 'text-on-surface-variant');
+                });
+            });
+        });
+    </script><footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-sm px-gutter py-xl max-w-container-max mx-auto"><div class="col-span-2"><div class="font-headline-md text-headline-md font-black text-on-surface mb-4">Domain Web Hosting</div><p class="text-on-surface-variant text-body-md max-w-xs mb-6">High-performance hosting and custom development solutions for the modern web. Call us: 0723658888</p><div class="flex gap-4"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a></div></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Services</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="/website-development/">Website Development</a></li><li><a class="hover:text-secondary transition-colors" href="/hosting/">Managed Hosting</a></li><li><a class="hover:text-secondary transition-colors" href="/domain-registration/">Domain Search</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Company</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Pricing Tiers</a></li><li><a class="hover:text-secondary transition-colors" href="/portfolio/">Portfolio</a></li><li><a class="hover:text-secondary transition-colors" href="#">Knowledge Base</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Legal</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Support</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> 0723658888</li><li><a class="hover:text-secondary transition-colors" href="#">Ticket System</a></li></ul></div></div><div class="max-w-container-max mx-auto px-gutter py-8 border-t border-outline-variant/30 text-on-surface-variant text-sm flex flex-col md:flex-row justify-between items-center gap-4"><span>© 2024 Domain Web Hosting. Engineered for performance.</span><div class="flex gap-6"><a class="hover:text-primary transition-colors" href="#">Status</a><a class="hover:text-primary transition-colors" href="#">Careers</a><a class="hover:text-primary transition-colors" href="#">Blog</a></div></div></footer></body></html>

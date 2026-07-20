@@ -1,0 +1,150 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>TechNexus | Secure Legal Infrastructure</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><!-- Tailwind Configuration --><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#454d63",
+                    "surface-container-low": "#f3f2fe",
+                    "primary-fixed": "#dde1ff",
+                    "on-primary-fixed": "#001452",
+                    "primary-container": "#003ec7",
+                    "on-tertiary": "#ffffff",
+                    "background": "#fbf8ff",
+                    "accent-purple": "#7c3aed",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-surface": "#1a1b23",
+                    "surface": "#f7f9fb",
+                    "surface-dim": "#d9d9e4",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#25005a",
+                    "primary": "#002b92",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#b6bed8",
+                    "surface-container": "#ededf8",
+                    "on-background": "#1a1b23",
+                    "inverse-surface": "#2f3039",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface-variant": "#434654",
+                    "secondary-fixed": "#eaddff",
+                    "on-secondary-container": "#fffbff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#3e465c",
+                    "secondary-container": "#8b4bfc",
+                    "on-tertiary-fixed": "#131b2f",
+                    "inverse-primary": "#b7c4ff",
+                    "tertiary-fixed": "#dae2fd",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "outline": "#737688",
+                    "on-primary-container": "#adbcff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c4c5d7",
+                    "surface-tint": "#004ced",
+                    "surface-bright": "#fbf8ff",
+                    "surface-container-high": "#e8e7f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#0038b6",
+                    "secondary": "#712ae2",
+                    "tertiary": "#2e364b",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e2e1ed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "container-max": "1280px",
+                    "base": "4px",
+                    "xl": "80px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-md": ["Geist"],
+                    "mono-sm": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display-lg-mobile": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "mono-sm": ["13px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script><style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-nav-border {
+            position: relative;
+        }
+        .active-nav-border::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #002b92;
+        }
+    </style></head><body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 w-full h-20"><div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full"><div class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dns</span><a class="text-body-lg font-headline-lg font-bold tracking-tighter text-on-surface" href="/">Domain Web Hosting</a></div><nav class="hidden md:flex items-center space-x-md"><a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="/hosting/">Hosting</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/domain-registration/">Domains</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/portfolio/">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Resources</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/contact/">Support</a></nav><div class="flex items-center gap-sm"><button class="font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95">Client Login</button><a class="font-label-md text-label-md px-6 py-2.5 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95" href="/contact/" style="display: inline-block; text-align: center;">Contact</a></div></div></header><!-- TopNavBar (Shared Component) --><!-- SideNavBar (Shared Component - Desktop Only) --><aside class="hidden lg:flex h-full w-64 fixed left-0 top-0 pt-20 flex-col p-md bg-surface border-r border-outline-variant/30 z-40"><div class="mb-lg"><h2 class="font-headline-md text-headline-md font-bold text-primary">Industry Solutions</h2><p class="text-on-surface-variant text-label-md">Technical Specializations</p></div><nav class="flex-1 space-y-base"><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all active:scale-95" href="#"><span class="material-symbols-outlined">storefront</span><span class="font-body-md">Small Business</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all active:scale-95" href="#"><span class="material-symbols-outlined">rocket_launch</span><span class="font-body-md">Startups</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all active:scale-95" href="#"><span class="material-symbols-outlined">volunteer_activism</span><span class="font-body-md">NGOs</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all active:scale-95" href="#"><span class="material-symbols-outlined">school</span><span class="font-body-md">Education</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all active:scale-95" href="#"><span class="material-symbols-outlined">medical_services</span><span class="font-body-md">Medical</span></a><a class="flex items-center gap-sm p-sm bg-primary-container text-on-primary-container rounded-lg transition-all" href="#"><span class="material-symbols-outlined">gavel</span><span class="font-body-md">Legal</span></a></nav><div class="pt-md mt-md border-t border-outline-variant/30 space-y-base"><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg" href="#"><span class="material-symbols-outlined">description</span><span class="font-body-md">Documentation</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg" href="#"><span class="material-symbols-outlined">help</span><span class="font-body-md">Support</span></a><button class="w-full mt-md bg-secondary text-on-secondary py-sm rounded-xl font-label-md hover:opacity-90 transition-opacity">Contact Sales</button></div></aside><main class="lg:pl-64 pt-16 min-h-screen"><!-- Hero Section --><section class="relative overflow-hidden bg-surface py-xl px-gutter"><div class="absolute inset-0 z-0 opacity-10"></div><div class="max-w-4xl mx-auto text-center relative z-10 pt-lg"><div class="inline-flex items-center gap-xs bg-primary/10 text-primary px-sm py-xs rounded-full font-label-md mb-md border border-primary/20"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                    ISO 27001 &amp; SOC 2 Type II Certified Infrastructure
+                </div><h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-md">
+                    Uncompromising Security for Professional <span class="text-primary">Legal Practices.</span></h1><p class="text-body-lg font-body-lg text-on-surface-variant mb-lg max-w-2xl mx-auto">
+                    The technical foundation for modern law firms. Military-grade document encryption meets seamless client communication in a high-trust digital environment.
+                </p><div class="flex flex-col sm:flex-row gap-sm justify-center items-center"><button class="bg-accent-purple text-on-primary px-lg py-md rounded-xl font-headline-md hover:scale-105 transition-transform duration-300 shadow-xl shadow-accent-purple/20">
+                        Deploy Secure Portal
+                    </button><button class="bg-white border border-outline-variant text-on-surface px-lg py-md rounded-xl font-headline-md hover:bg-surface-variant/20 transition-colors">
+                        View Security Specs
+                    </button></div></div></section><!-- Feature Grid: Bento Style --><section class="py-xl px-gutter max-w-container-max mx-auto"><div class="mb-lg text-center"><h2 class="font-headline-lg text-headline-lg mb-sm">Engineered for Reliability</h2><p class="text-on-surface-variant max-w-xl mx-auto">Our infrastructure exceeds standard encryption requirements to ensure client confidentiality remains absolute.</p></div><div class="grid grid-cols-1 md:grid-cols-12 gap-md auto-rows-[280px]"><!-- Encryption Card --><div class="md:col-span-8 bg-white border border-outline-variant/30 rounded-3xl p-md flex flex-col justify-between overflow-hidden relative group"><div class="relative z-10"><span class="material-symbols-outlined text-primary text-[40px] mb-sm">enhanced_encryption</span><h3 class="font-headline-md text-headline-md mb-xs">Military-Grade Document Encryption</h3><p class="text-on-surface-variant max-w-md">AES-256 at-rest and TLS 1.3 in-transit. Zero-knowledge architecture ensures even we can't see your client files.</p></div><div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity"><img class="w-full h-full object-contain" data-alt="A clean, minimalist high-tech visualization of data flowing through a series of geometric shields and crystalline hexagonal locks. The style is sharp, architectural, and colored in deep corporate blues and bright whites to emphasize digital security and precision for a law firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNO5_EWGpIaoszrGctUf5ZGVSQDFvDS6i-9yqc3dV3WReLrLHTaH39FFkf5HfuDnNYrP7lAWHWlOKbfiNCGGsOiF59NQ2TpO4aDEaUW1At1pc4cLU1vBB6t7xgoRJRTmUQy2IEy16NBkycMIvWCnoQfAUM46sBHnX5XQeNW4nOBRJPgTx0rgK2VFL8Yr_wn0sJCx-6GTLO4DQwTcLe7Nuj9Ro8eXeKJWHRNPvBGxlxYBqwNnqbw0mS"></div></div><!-- Reliability Card --><div class="md:col-span-4 bg-primary text-on-primary rounded-3xl p-md flex flex-col justify-end"><div class="mb-auto"><span class="material-symbols-outlined text-[40px]">shield_with_heart</span></div><h3 class="font-headline-md text-headline-md mb-xs">99.999% Uptime</h3><p class="opacity-80">Geographic redundancy across tier-4 data centers ensures your practice is always online.</p></div><!-- Client Comm Card --><div class="md:col-span-4 bg-surface-container-low border border-outline-variant/30 rounded-3xl p-md group"><span class="material-symbols-outlined text-accent-purple text-[40px] mb-sm group-hover:scale-110 transition-transform">lock_person</span><h3 class="font-headline-md text-headline-md mb-xs">Secure Communication</h3><p class="text-on-surface-variant">Encrypted messaging and client portals that replace vulnerable email exchanges.</p></div><!-- Management Card --><div class="md:col-span-8 bg-white border border-outline-variant/30 rounded-3xl p-md flex flex-col md:flex-row gap-md items-center"><div class="flex-1"><h3 class="font-headline-md text-headline-md mb-xs">Professional Document Management</h3><p class="text-on-surface-variant mb-md">Version control, digital forensics, and audit logs for every interaction within your firm's ecosystem.</p><ul class="space-y-xs text-label-md font-label-md text-primary"><li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check_circle</span> Immutable Audit Logs</li><li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check_circle</span> E-Discovery Integration</li></ul></div><div class="w-full md:w-1/3 h-48 bg-surface-variant/50 rounded-xl overflow-hidden"><img class="w-full h-full object-cover" data-alt="A macro shot of a sleek, modern server interface showing detailed log files and data streams. The lighting is low and sophisticated, featuring cool blue tones and crisp white typography. The focus is sharp, suggesting technical competence and absolute attention to detail in document tracking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBePemPO1jz_eB3DLNBPUM0xp9IKv5hka_UwcjWBC3qvz4gfWAOSJPy3wwJNYZLKV9IXvRU9gPzz0n2b4RZnyVEZtgDybCypbac0mTeaZba_C6uJ8pHtPLC_c-EzkkftbczvTDhTu6cXdIw6uyVPX-ornChOpDw4mrSvbjmpp-zJWJc0pW3nTrQvZYAqtzi4g_4dr4UDTCvq99cezcnrcs5hkbpdHYQanYZ9UxeUiInWCz4Ffn86zah"></div></div></div></section><!-- High-Trust Visual Design Section --><section class="py-xl bg-surface-container-highest/30"><div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-lg items-center"><div class="relative"><div class="aspect-video bg-white rounded-3xl shadow-2xl overflow-hidden border border-outline-variant/20"><img class="w-full h-full object-cover" data-alt="An expansive, sun-drenched modern architectural interior of a prestigious law firm. High ceilings, glass walls, and minimalist furniture create an atmosphere of transparency, power, and professional authority. The color palette is composed of soft greys, deep navy, and brilliant whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbvlvcSYegVorXx1hopeMB_ABJUEqatDAoGqBdFdP4ke4adyvom7s_BScyudB8npEboW9f3KI52IqgBaQZM5NiIDZXha6DsgTAgfDjPi_3J5ypdcMMSnLJIUMfXPOZCGf89bxsV62hnsqoNoaqXScLb_FVqxpDiBq2sIPEt7zcrxC3NdupwsAfj8VF59v6NeqgOT6MO2ZpaDNufIwacWUgWhBzsaHoQfzq5ioGZxcPxEnPjqsZb9aH"></div><div class="absolute -bottom-xs -right-xs bg-white p-md rounded-2xl shadow-xl border border-outline-variant/30 max-w-xs"><div class="flex items-center gap-sm mb-xs"><div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div><span class="font-mono-sm text-mono-sm uppercase tracking-wider">Active Monitoring</span></div><p class="text-label-md">24/7 Security Operations Center monitoring all firm nodes.</p></div></div><div><h2 class="font-headline-lg text-headline-lg mb-md">The Standard of Professional Authority</h2><p class="text-body-lg text-on-surface-variant mb-md">
+                        Your website is more than a digital brochure—it is your firm's secure perimeter. TechNexus provides the technical gravitas that reinforces your brand's reputation for discretion and competence.
+                    </p><div class="grid grid-cols-2 gap-md"><div><div class="text-display-lg-mobile font-headline-lg text-primary">15min</div><div class="font-label-md text-on-surface-variant">Average Deployment</div></div><div><div class="text-display-lg-mobile font-headline-lg text-primary">Zero</div><div class="font-label-md text-on-surface-variant">Security Breaches</div></div></div></div></div></section><!-- CTA Section --><section class="py-xl px-gutter"><div class="max-w-container-max mx-auto bg-on-background text-on-primary rounded-[2rem] p-lg md:p-xl flex flex-col items-center text-center relative overflow-hidden"><div class="absolute inset-0 opacity-20 pointer-events-none"></div><h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg mb-md relative z-10">Secure Your Legacy Today</h2><p class="text-on-primary-container max-w-xl mb-lg relative z-10">
+                    Schedule a security audit with our technical engineers and see how TechNexus can harden your firm's digital infrastructure.
+                </p><div class="flex flex-wrap gap-sm justify-center relative z-10"><button class="bg-primary-fixed text-on-primary-fixed px-lg py-md rounded-xl font-headline-md hover:scale-105 transition-transform shadow-lg">Start Configuration</button><button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-lg py-md rounded-xl font-headline-md hover:bg-white/20 transition-colors">Consult an Expert</button></div></div></section><!-- Footer (Shared Component) --></main><script>
+        // Micro-interactions for scrolling and hovering
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-8');
+                observer.observe(el);
+            });
+        });
+    </script><footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-sm px-gutter py-xl max-w-container-max mx-auto"><div class="col-span-2"><div class="font-headline-md text-headline-md font-black text-on-surface mb-4">Domain Web Hosting</div><p class="text-on-surface-variant text-body-md max-w-xs mb-6">High-performance hosting and custom development solutions for the modern web. Call us: 0723658888</p><div class="flex gap-4"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a></div></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Services</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="/website-development/">Website Development</a></li><li><a class="hover:text-secondary transition-colors" href="/hosting/">Managed Hosting</a></li><li><a class="hover:text-secondary transition-colors" href="/domain-registration/">Domain Search</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Company</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Pricing Tiers</a></li><li><a class="hover:text-secondary transition-colors" href="/portfolio/">Portfolio</a></li><li><a class="hover:text-secondary transition-colors" href="#">Knowledge Base</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Legal</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Support</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> 0723658888</li><li><a class="hover:text-secondary transition-colors" href="#">Ticket System</a></li></ul></div></div><div class="max-w-container-max mx-auto px-gutter py-8 border-t border-outline-variant/30 text-on-surface-variant text-sm flex flex-col md:flex-row justify-between items-center gap-4"><span>© 2024 Domain Web Hosting. Engineered for performance.</span><div class="flex gap-6"><a class="hover:text-primary transition-colors" href="#">Status</a><a class="hover:text-primary transition-colors" href="#">Careers</a><a class="hover:text-primary transition-colors" href="#">Blog</a></div></div></footer></body></html>

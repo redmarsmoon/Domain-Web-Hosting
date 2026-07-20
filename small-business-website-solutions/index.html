@@ -1,0 +1,154 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>TechNexus | Small Business Infrastructure</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .soft-glow {
+            box-shadow: 0 0 20px 2px rgba(0, 43, 146, 0.05);
+        }
+        .hover-lift {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px) scale(1.01);
+        }
+    </style><script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#454d63",
+                        "surface-container-low": "#f3f2fe",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-fixed": "#001452",
+                        "primary-container": "#003ec7",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf8ff",
+                        "accent-purple": "#7c3aed",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-surface": "#1a1b23",
+                        "surface": "#f7f9fb",
+                        "surface-dim": "#d9d9e4",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#25005a",
+                        "primary": "#002b92",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#b6bed8",
+                        "surface-container": "#ededf8",
+                        "on-background": "#1a1b23",
+                        "inverse-surface": "#2f3039",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface-variant": "#434654",
+                        "secondary-fixed": "#eaddff",
+                        "on-secondary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3e465c",
+                        "secondary-container": "#8b4bfc",
+                        "on-tertiary-fixed": "#131b2f",
+                        "inverse-primary": "#b7c4ff",
+                        "tertiary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "outline": "#737688",
+                        "on-primary-container": "#adbcff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c5d7",
+                        "surface-tint": "#004ced",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-high": "#e8e7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "secondary": "#712ae2",
+                        "tertiary": "#2e364b",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e1ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "xl": "80px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Geist"],
+                        "mono-sm": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "mono-sm": ["13px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script></head><body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed"><!-- Top Navigation Bar --><nav class="fixed top-0 w-full z-50 glass-nav bg-surface/80 border-b border-outline-variant/30 h-16"><div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-full"><div class="flex items-center gap-xs"><span class="font-headline-md text-headline-md font-extrabold text-primary tracking-tighter">TechNexus</span></div><div class="hidden md:flex items-center gap-md"><a class="font-label-md text-label-md text-primary border-b-2 border-primary py-xs" href="#">Sectors</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Infrastructure</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a></div><div class="flex items-center gap-sm"><button class="hidden sm:block px-md py-xs font-label-md text-label-md text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">Log In</button><button class="px-md py-xs font-label-md text-label-md bg-accent-purple text-white rounded-lg hover:scale-102 transition-transform shadow-lg shadow-accent-purple/20">Deploy Now</button></div></div></nav><!-- Side Navigation (Web only) --><aside class="hidden lg:flex flex-col p-md h-full w-64 fixed left-0 top-16 bg-surface border-r border-outline-variant/30 z-40"><div class="mb-lg"><h3 class="font-label-md text-label-md font-bold text-outline uppercase tracking-widest mb-xs">Industry Solutions</h3><p class="font-body-md text-body-md text-on-surface-variant/70 leading-tight">Technical Specializations</p></div><nav class="flex-1 space-y-base"><a class="flex items-center gap-sm px-sm py-xs bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md" href="#"><span class="material-symbols-outlined">storefront</span><span>Small Business</span></a><a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant/50 rounded-lg font-label-md text-label-md transition-all group" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary">rocket_launch</span><span>Startups</span></a><a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant/50 rounded-lg font-label-md text-label-md transition-all group" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary">volunteer_activism</span><span>NGOs</span></a><a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant/50 rounded-lg font-label-md text-label-md transition-all group" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary">school</span><span>Education</span></a><a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant/50 rounded-lg font-label-md text-label-md transition-all group" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary">medical_services</span><span>Medical</span></a><a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant/50 rounded-lg font-label-md text-label-md transition-all group" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary">gavel</span><span>Legal</span></a></nav><div class="mt-auto pt-md border-t border-outline-variant/20"><button class="w-full mb-md py-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors">Contact Sales</button><div class="space-y-xs"><a class="flex items-center gap-sm text-on-surface-variant hover:text-primary text-label-md" href="#"><span class="material-symbols-outlined text-[18px]">description</span> Documentation
+                </a><a class="flex items-center gap-sm text-on-surface-variant hover:text-primary text-label-md" href="#"><span class="material-symbols-outlined text-[18px]">help</span> Support
+                </a></div></div></aside><main class="lg:pl-64 pt-16 min-h-screen"><!-- Hero Section --><section class="relative px-gutter py-xl md:py-[120px] overflow-hidden"><div class="absolute inset-0 z-0"></div><div class="max-w-container-max mx-auto relative z-10"><div class="max-w-3xl"><span class="inline-block px-sm py-base bg-primary-container/10 text-primary font-mono-sm text-mono-sm rounded-full mb-md border border-primary/20">Enterprise-Grade for SMBs</span><h1 class="font-headline-lg text-display-lg-mobile md:text-display-lg text-primary mb-md leading-tight">
+                        Empowering Local Growth with Professional Infrastructure.
+                    </h1><p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-2xl">
+                        We deploy high-performance, SEO-optimized web ecosystems specifically engineered for local business resilience and scale.
+                    </p><div class="flex flex-col sm:flex-row gap-md"><button class="px-xl py-md bg-primary text-white font-label-md text-label-md rounded-lg hover:scale-102 active:scale-95 transition-all shadow-xl shadow-primary/20">Get Started</button><button class="px-xl py-md border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-variant/30 transition-all">View Architecture</button></div></div></div></section><!-- Bento Features Grid --><section class="px-gutter py-xl bg-surface-container-lowest"><div class="max-w-container-max mx-auto"><div class="flex justify-between items-end mb-lg"><div class="max-w-xl"><h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Engineered for Reliability</h2><p class="font-body-md text-body-md text-on-surface-variant">Precision components designed to outperform the competition in local markets.</p></div></div><div class="grid grid-cols-1 md:grid-cols-12 gap-md auto-rows-[240px]"><!-- Feature 1: Mobile First --><div class="md:col-span-8 bg-surface border border-outline-variant/30 rounded-[1.5rem] p-lg flex flex-col justify-end relative overflow-hidden group hover-lift"><div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity"><img class="w-full h-full object-cover" data-alt="A clean, minimalist mobile interface showing high-performance code on a high-resolution display, with soft studio lighting and a clean tech aesthetic using blues and whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChBKONMkFo0zN4Z-PYLqrCYxrhJ0n7gWnvKbrE_g0JVNEzqutNOqn9sb3M2B0nNR32cDgKcBcrFzwB-sOARZApNJes8a_AJyQXMfo00e8rAl3rjkG5nNbvIlaxNUiSOUF3UXSzL9vC5Cu02yiPccYaycjIO7CqcC0LZUpfaeBPtlMyweqXFVr9TmJU9WDEZe4f_CehWppyr25HzNbYzTt66qxA_0XmDe_qXEs2A8wIxpvF87Pv45Ur"></div><div class="relative z-10"><span class="material-symbols-outlined text-primary mb-sm text-3xl">devices</span><h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Mobile-First Design</h3><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Optimized for every device, ensuring 100% responsiveness and lightning-fast loading speeds on mobile networks.</p></div></div><!-- Feature 2: Local SEO --><div class="md:col-span-4 bg-primary-container text-white rounded-[1.5rem] p-lg flex flex-col justify-between hover-lift"><div class="flex justify-between items-start"><span class="material-symbols-outlined text-3xl">map</span><span class="font-mono-sm text-mono-sm bg-white/10 px-sm py-base rounded-full">Active Optimization</span></div><div><h3 class="font-headline-md text-headline-md mb-xs">Local SEO Optimized</h3><p class="font-body-md text-body-md opacity-80">Pre-configured Local Business Schema for dominant Google Maps rankings.</p></div></div><!-- Feature 3: Support --><div class="md:col-span-4 bg-surface border border-outline-variant/30 rounded-[1.5rem] p-lg flex flex-col justify-between hover-lift"><span class="material-symbols-outlined text-accent-purple text-3xl">support_agent</span><div><h3 class="font-headline-md text-headline-md text-on-surface mb-xs">24/7 Local Support</h3><p class="font-body-md text-body-md text-on-surface-variant">Real humans in your time zone, providing technical guidance around the clock.</p></div></div><!-- Feature 4: Management --><div class="md:col-span-8 bg-surface-container rounded-[1.5rem] p-lg flex items-center gap-lg hover-lift"><div class="hidden md:block w-1/3 aspect-square rounded-xl overflow-hidden border border-outline-variant/30"><img class="w-full h-full object-cover" data-alt="Close up of a sleek, modern dashboard UI with technical data charts, clean typography, and a sophisticated color palette of whites and primary blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbi7qNkaAZBbVL6WGvpYUGWIMjLn1sOfRbQv009tsv4luK5lZwBzrDdDtxKa2-or5zKP9B6tmnvusEkUIsw_jY9VaD8rI5jVKYiq2t96y4VUbEPe1ePiYjyV-aNyPx3S_gkRkIVrflGAT_J5NxFQBazdmzb6zdzTSDIMCMsXiSGLjFMQSBxikzbQDjeaOUu-dld2zY2CwOcsz6lCYaaLppFG6H59hdRAsNR91JkbzofKl0zKIkjuHI"></div><div class="flex-1"><h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Ease of Management</h3><p class="font-body-md text-body-md text-on-surface-variant mb-md">Our unified TechNexus dashboard lets you update your entire presence with a few clicks. No coding required.</p><a class="inline-flex items-center gap-xs font-label-md text-label-md text-primary font-bold hover:underline" href="#">Explore the Dashboard <span class="material-symbols-outlined">arrow_forward</span></a></div></div></div></div></section><!-- Dynamic Trust Section --><section class="px-gutter py-xl bg-surface"><div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-xl"><div class="w-full md:w-1/2"><div class="relative rounded-[2rem] overflow-hidden border border-outline-variant/30 aspect-video group"><img class="w-full h-full object-cover" data-alt="A professional team working in a bright, modern architectural office space with glass walls and minimalist furniture. The lighting is natural and airy, reflecting a high-end corporate culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXV3qLEuEgMYuDdZpR5pytmPBdXwlfTtJH4eBMtFfTq6kNaxuT-mMravFSlXWkL3_L9faUHdVt8s8CMBlyF3n-JF-t5KAdN4xQsmhCc2Nx7gMaI24fEF-kiWbjLTcriuPJrbvnBgv2rNj5Q7Np3GsHZdDuGIRS2rM-b7OcaZ7Yq4YmfgpDdOz0QZFgke-IL_ps1DWjzFKzdc-LQLGYd4qKrGRHlM6UYfNrHgx1DGGpx8F3A0q0j50h"><div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div></div></div><div class="w-full md:w-1/2 space-y-md"><h2 class="font-headline-lg text-headline-lg text-on-surface">The Foundation Your Business Deserves</h2><p class="font-body-lg text-body-lg text-on-surface-variant">
+                        We don't just build websites; we provide the technical infrastructure that allows small businesses to compete with enterprise giants. Every deployment includes built-in security, redundant hosting, and automated backups.
+                    </p><ul class="space-y-sm"><li class="flex items-center gap-sm font-label-md text-label-md text-on-surface"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            99.99% Uptime SLA Guaranteed
+                        </li><li class="flex items-center gap-sm font-label-md text-label-md text-on-surface"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Automated SSL &amp; Security Patching
+                        </li><li class="flex items-center gap-sm font-label-md text-label-md text-on-surface"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Integrated Global CDN Delivery
+                        </li></ul></div></div></section><!-- Footer --></main><!-- Contextual FAB (Only on relevant screens) --><div class="fixed bottom-md right-md z-50"><button class="flex items-center gap-sm bg-accent-purple text-white px-md py-sm rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all group"><span class="material-symbols-outlined">bolt</span><span class="font-label-md text-label-md font-bold">Quick Deploy</span></button></div><script>
+        // Micro-interactions for navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.classList.add('scale-102');
+            });
+            link.addEventListener('mouseleave', () => {
+                link.classList.remove('scale-102');
+            });
+        });
+
+        // Simple scroll observer for glass effect intensity
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-surface/95', 'shadow-sm');
+                nav.classList.remove('bg-surface/80');
+            } else {
+                nav.classList.add('bg-surface/80');
+                nav.classList.remove('bg-surface/95', 'shadow-sm');
+            }
+        });
+    </script><footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-sm px-gutter py-xl max-w-container-max mx-auto"><div class="col-span-2"><div class="font-headline-md text-headline-md font-black text-on-surface mb-4">Domain Web Hosting</div><p class="text-on-surface-variant text-body-md max-w-xs mb-6">High-performance hosting and custom development solutions for the modern web. Call us: 0723658888</p><div class="flex gap-4"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a></div></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Services</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="/website-development/">Website Development</a></li><li><a class="hover:text-secondary transition-colors" href="/hosting/">Managed Hosting</a></li><li><a class="hover:text-secondary transition-colors" href="/domain-registration/">Domain Search</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Company</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Pricing Tiers</a></li><li><a class="hover:text-secondary transition-colors" href="/portfolio/">Portfolio</a></li><li><a class="hover:text-secondary transition-colors" href="#">Knowledge Base</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Legal</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Support</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> 0723658888</li><li><a class="hover:text-secondary transition-colors" href="#">Ticket System</a></li></ul></div></div><div class="max-w-container-max mx-auto px-gutter py-8 border-t border-outline-variant/30 text-on-surface-variant text-sm flex flex-col md:flex-row justify-between items-center gap-4"><span>© 2024 Domain Web Hosting. Engineered for performance.</span><div class="flex gap-6"><a class="hover:text-primary transition-colors" href="#">Status</a><a class="hover:text-primary transition-colors" href="#">Careers</a><a class="hover:text-primary transition-colors" href="#">Blog</a></div></div></footer></body></html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>NGO Solutions | TechNexus Infrastructure</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .bento-item {
+            border: 1px solid rgba(196, 197, 215, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-item:hover {
+            border-color: #002b92;
+            transform: translateY(-4px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #002b92 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style><script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#454d63",
+                        "surface-container-low": "#f3f2fe",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-fixed": "#001452",
+                        "primary-container": "#003ec7",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf8ff",
+                        "accent-purple": "#7c3aed",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-surface": "#1a1b23",
+                        "surface": "#f7f9fb",
+                        "surface-dim": "#d9d9e4",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#25005a",
+                        "primary": "#002b92",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#b6bed8",
+                        "surface-container": "#ededf8",
+                        "on-background": "#1a1b23",
+                        "inverse-surface": "#2f3039",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface-variant": "#434654",
+                        "secondary-fixed": "#eaddff",
+                        "on-secondary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3e465c",
+                        "secondary-container": "#8b4bfc",
+                        "on-tertiary-fixed": "#131b2f",
+                        "inverse-primary": "#b7c4ff",
+                        "tertiary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "outline": "#737688",
+                        "on-primary-container": "#adbcff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c5d7",
+                        "surface-tint": "#004ced",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-high": "#e8e7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "secondary": "#712ae2",
+                        "tertiary": "#2e364b",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e1ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "xl": "80px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Geist"],
+                        "mono-sm": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "mono-sm": ["13px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script></head><body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed"><!-- Top Navigation Bar --><nav class="fixed top-0 w-full z-50 glass-nav bg-surface/80 border-b border-outline-variant/30 h-16"><div class="max-w-container-max mx-auto px-gutter h-full flex justify-between items-center"><div class="flex items-center gap-8"><span class="font-headline-md text-headline-md font-bold text-primary">TechNexus</span><div class="hidden md:flex gap-6"><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sectors</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Infrastructure</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a></div></div><button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md transition-transform hover:scale-105 active:scale-95">
+                Deploy Now
+            </button></div></nav><!-- Side Navigation (Suppressed on Landing but available for Context) --><aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface border-r border-outline-variant/30 p-md z-40"><div class="mb-8"><h3 class="font-headline-md text-headline-md font-bold text-primary">Industry Solutions</h3><p class="text-on-surface-variant font-body-md text-[14px]">Technical Specializations</p></div><nav class="flex flex-col gap-1 flex-grow"><a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all group" href="#"><span class="material-symbols-outlined">storefront</span><span class="font-body-md">Small Business</span></a><a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">rocket_launch</span><span class="font-body-md">Startups</span></a><a class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container rounded-lg transition-all" href="#"><span class="material-symbols-outlined">volunteer_activism</span><span class="font-body-md">NGOs</span></a><a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">school</span><span class="font-body-md">Education</span></a><a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">medical_services</span><span class="font-body-md">Medical</span></a><a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">gavel</span><span class="font-body-md">Legal</span></a></nav><div class="mt-auto border-t border-outline-variant/20 pt-md"><button class="w-full bg-secondary-container text-on-secondary-container p-3 rounded-lg font-label-md mb-4 hover:opacity-90">Contact Sales</button><div class="flex flex-col gap-2"><a class="flex items-center gap-3 text-on-surface-variant text-[14px] hover:text-primary" href="#"><span class="material-symbols-outlined text-[18px]">description</span> Documentation
+                </a><a class="flex items-center gap-3 text-on-surface-variant text-[14px] hover:text-primary" href="#"><span class="material-symbols-outlined text-[18px]">help</span> Support
+                </a></div></div></aside><main class="lg:ml-64 pt-16"><!-- Hero Section --><section class="relative min-h-[819px] flex items-center overflow-hidden bg-surface-container-lowest"><div class="max-w-container-max mx-auto px-gutter relative z-10 py-xl"><div class="max-w-3xl"><div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary font-label-md mb-6"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span>
+                        Campaign Ready: Enterprise Resilience
+                    </div><h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight mb-6">
+                        Secure Infrastructure for <span class="gradient-text">Global Impact.</span></h1><p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                        Powering non-profits with military-grade security, lightning-fast global delivery, and mission-critical payment integrations. Focus on your cause while we handle the scale.
+                    </p><div class="flex flex-wrap gap-4"><button class="bg-accent-purple text-on-primary px-8 py-4 rounded-xl font-headline-md text-headline-md transition-all hover:scale-105 active:scale-95 shadow-lg shadow-accent-purple/20">
+                            Deploy Infrastructure
+                        </button><button class="bg-transparent border border-outline px-8 py-4 rounded-xl font-headline-md text-headline-md text-on-surface hover:bg-surface-variant/30 transition-all">
+                            View Case Studies
+                        </button></div></div></div></section><!-- Bento Grid Features --><section class="py-xl max-w-container-max mx-auto px-gutter"><div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-6"><div class="max-w-xl"><h2 class="font-headline-lg text-headline-lg mb-4">Engineered for Missions.</h2><p class="text-on-surface-variant font-body-md">Advanced technical solutions tailored specifically for the unique spikes and security requirements of global NGO campaigns.</p></div><div class="flex gap-4"><div class="flex flex-col items-center p-4 bg-surface rounded-lg border border-outline-variant/30"><span class="font-headline-md text-primary">99.99%</span><span class="text-[12px] uppercase tracking-wider text-on-surface-variant">Uptime</span></div><div class="flex flex-col items-center p-4 bg-surface rounded-lg border border-outline-variant/30"><span class="font-headline-md text-primary">24/7</span><span class="text-[12px] uppercase tracking-wider text-on-surface-variant">Monitoring</span></div></div></div><div class="bento-grid"><!-- Large Feature: DDoS Protection --><div class="col-span-12 md:col-span-8 bento-item bg-surface-container-lowest p-md rounded-[1.5rem] relative overflow-hidden h-[400px]"><div class="relative z-10 h-full flex flex-col"><div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6"><span class="material-symbols-outlined text-primary">shield</span></div><h3 class="font-headline-lg text-headline-lg mb-4">Enterprise DDoS Protection</h3><p class="font-body-md text-on-surface-variant max-w-md">Our multi-layered scrubbing network mitigates massive L3/L4 and L7 attacks automatically, ensuring your donation forms stay online during peak television or social media surges.</p><div class="mt-auto flex items-center gap-4"><span class="font-label-md text-primary flex items-center gap-1">Learn more <span class="material-symbols-outlined">arrow_forward</span></span></div></div><div class="absolute right-0 bottom-0 w-2/3 h-2/3 opacity-20"></div></div><!-- Small Feature: Secure Payments --><div class="col-span-12 md:col-span-4 bento-item bg-surface p-md rounded-[1.5rem]"><div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6"><span class="material-symbols-outlined text-secondary">payments</span></div><h3 class="font-headline-md text-headline-md mb-4">Secure Payment Gateways</h3><p class="font-body-md text-on-surface-variant">PCI-DSS compliant architecture supporting global currencies and recurring donation systems out of the box.</p></div><!-- Small Feature: Global Edge --><div class="col-span-12 md:col-span-4 bento-item bg-surface p-md rounded-[1.5rem]"><div class="w-12 h-12 bg-accent-purple/10 rounded-lg flex items-center justify-center mb-6"><span class="material-symbols-outlined text-accent-purple">public</span></div><h3 class="font-headline-md text-headline-md mb-4">Global Content Delivery</h3><p class="font-body-md text-on-surface-variant">Edge nodes in 140+ countries ensure sub-100ms loading times for donors anywhere on the planet.</p></div><!-- Large Feature: Resilience --><div class="col-span-12 md:col-span-8 bento-item bg-inverse-surface text-inverse-on-surface p-md rounded-[1.5rem] flex flex-col md:flex-row gap-8"><div class="flex-1 flex flex-col justify-center"><h3 class="font-headline-lg text-headline-lg mb-4 text-white">Campaign Resilience</h3><p class="font-body-md text-on-surface-variant mb-6">Automated horizontal scaling that responds to traffic spikes within seconds. No more crashed sites during viral moments.</p><ul class="space-y-3"><li class="flex items-center gap-2 font-label-md"><span class="material-symbols-outlined text-accent-purple">check_circle</span> 1.5M Concurrent Requests/sec</li><li class="flex items-center gap-2 font-label-md"><span class="material-symbols-outlined text-accent-purple">check_circle</span> Automated Health Checks</li><li class="flex items-center gap-2 font-label-md"><span class="material-symbols-outlined text-accent-purple">check_circle</span> Failover Redundancy</li></ul></div><div class="flex-1 rounded-xl overflow-hidden relative min-h-[200px]"><img class="absolute inset-0 w-full h-full object-cover" data-alt="A high-tech control room with multiple holographic displays showing real-time global traffic data and network health metrics. The lighting is dark and moody with vibrant neon blue and purple accents, emphasizing a sophisticated command center atmosphere. The overall style is futuristic and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5hr78sKE0lgKsgP-AVBhzc5YY9LhnKSgqWIvXlFnPhTDMo3ZnnMgTGU7q_aI4Fq70pg66gTMcV805Bbu1b7bejh6qN3rMAKb0wWdQ18yi5mMs2-_DmCDq-hcIC3tyEXJWIlMCUTkvcHmSnaQBObHQL_BiZ6FOIRgBbupVvEVHknYY5auFJw2w5nN0syMnc6GzpgOgZ-JthpWEUiq_Escx3b7CJ9m0R9eoocDb68o7BNF2up3q_P95"></div></div></div></section><!-- Stats Section --><section class="py-xl bg-surface-container"><div class="max-w-container-max mx-auto px-gutter"><div class="grid grid-cols-2 lg:grid-cols-4 gap-8"><div class="text-center"><p class="font-display-lg text-primary text-4xl mb-2">500+</p><p class="font-label-md text-on-surface-variant">NGOs Supported</p></div><div class="text-center"><p class="font-display-lg text-primary text-4xl mb-2">$2B+</p><p class="font-label-md text-on-surface-variant">Donations Processed</p></div><div class="text-center"><p class="font-display-lg text-primary text-4xl mb-2">142</p><p class="font-label-md text-on-surface-variant">Countries Reached</p></div><div class="text-center"><p class="font-display-lg text-primary text-4xl mb-2">0</p><p class="font-label-md text-on-surface-variant">Downtime Minutes</p></div></div></div></section><!-- Trust Section --><section class="py-xl max-w-container-max mx-auto px-gutter"><div class="bg-primary p-lg rounded-[2rem] text-on-primary flex flex-col md:flex-row items-center gap-lg"><div class="flex-1"><h2 class="font-headline-lg text-headline-lg mb-6">Ready to scale your impact?</h2><p class="font-body-lg text-body-lg opacity-80 mb-8">Our technical experts are ready to audit your current infrastructure and provide a migration roadmap for your next big campaign.</p><div class="flex gap-4"><button class="bg-surface text-primary px-6 py-3 rounded-lg font-bold hover:bg-surface-dim transition-all">Schedule Consultation</button><button class="border border-on-primary/30 px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-all">Download Brochure</button></div></div><div class="flex-1 w-full h-64 md:h-80 rounded-xl overflow-hidden relative shadow-2xl"><div class="absolute inset-0 bg-gradient-to-tr from-primary to-accent-purple mix-blend-multiply opacity-40"></div><img class="w-full h-full object-cover" data-alt="A diverse group of professional humanitarian workers collaborating in a modern, open-office environment. They are looking at large screens displaying global maps and data visualizations. The lighting is warm and inspiring, suggesting a positive and high-impact workplace. The style is clean, corporate, and empathetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCplsLtr87ZW3eObjeMl00WAOynbsyL_i80Cvpt5atsDX9Wfenqn00S1OOWdCLnP8RapX4sfDkT5vQD3v4WY4fUFv96x8idgNvwUUKnyEoMeSn4pG9k5DPgWzPnMr8JmbsoHqO4A4rVr0ujCVxLHfDJWHbIrUEFBS-D09TzUGhzCKTCb_CVVgDhIvztGXcVgF0ykqCmhs8uvkl6uncE5DwW3uJvJwNGSYCiqug7MNwpzlyfO0Ret6lk"></div></div></section><!-- Footer --></main><script>
+        // Simple scroll interaction for header
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+
+        // Tab selection logic (Simulated)
+        const navLinks = document.querySelectorAll('.lg\\:ml-64 aside a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(l => {
+                    l.classList.remove('bg-primary-container', 'text-on-primary-container');
+                    l.classList.add('text-on-surface-variant', 'hover:bg-surface-variant/50');
+                });
+                link.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant/50');
+                link.classList.add('bg-primary-container', 'text-on-primary-container');
+            });
+        });
+    </script><footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-sm px-gutter py-xl max-w-container-max mx-auto"><div class="col-span-2"><div class="font-headline-md text-headline-md font-black text-on-surface mb-4">Domain Web Hosting</div><p class="text-on-surface-variant text-body-md max-w-xs mb-6">High-performance hosting and custom development solutions for the modern web. Call us: 0723658888</p><div class="flex gap-4"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a></div></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Services</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="/website-development/">Website Development</a></li><li><a class="hover:text-secondary transition-colors" href="/hosting/">Managed Hosting</a></li><li><a class="hover:text-secondary transition-colors" href="/domain-registration/">Domain Search</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Company</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Pricing Tiers</a></li><li><a class="hover:text-secondary transition-colors" href="/portfolio/">Portfolio</a></li><li><a class="hover:text-secondary transition-colors" href="#">Knowledge Base</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Legal</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Support</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> 0723658888</li><li><a class="hover:text-secondary transition-colors" href="#">Ticket System</a></li></ul></div></div><div class="max-w-container-max mx-auto px-gutter py-8 border-t border-outline-variant/30 text-on-surface-variant text-sm flex flex-col md:flex-row justify-between items-center gap-4"><span>© 2024 Domain Web Hosting. Engineered for performance.</span><div class="flex gap-6"><a class="hover:text-primary transition-colors" href="#">Status</a><a class="hover:text-primary transition-colors" href="#">Careers</a><a class="hover:text-primary transition-colors" href="#">Blog</a></div></div></footer></body></html>

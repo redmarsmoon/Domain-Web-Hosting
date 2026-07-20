@@ -1,0 +1,146 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>TechNexus | High-Performance Hotel Infrastructure</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: #002b92;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 43, 146, 0.1);
+        }
+    </style><script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#454d63",
+                        "surface-container-low": "#f3f2fe",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-fixed": "#001452",
+                        "primary-container": "#003ec7",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf8ff",
+                        "accent-purple": "#7c3aed",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-surface": "#1a1b23",
+                        "surface": "#f7f9fb",
+                        "surface-dim": "#d9d9e4",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#25005a",
+                        "primary": "#002b92",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#b6bed8",
+                        "surface-container": "#ededf8",
+                        "on-background": "#1a1b23",
+                        "inverse-surface": "#2f3039",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface-variant": "#434654",
+                        "secondary-fixed": "#eaddff",
+                        "on-secondary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3e465c",
+                        "secondary-container": "#8b4bfc",
+                        "on-tertiary-fixed": "#131b2f",
+                        "inverse-primary": "#b7c4ff",
+                        "tertiary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "outline": "#737688",
+                        "on-primary-container": "#adbcff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c5d7",
+                        "surface-tint": "#004ced",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-high": "#e8e7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "secondary": "#712ae2",
+                        "tertiary": "#2e364b",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e1ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "xl": "80px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Geist"],
+                        "mono-sm": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "mono-sm": ["13px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script></head><body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-white"><!-- Top Navigation Bar --><nav class="fixed top-0 w-full z-50 bg-surface/80 glass-nav border-b border-outline-variant/30"><div class="max-w-container-max mx-auto px-gutter h-16 flex justify-between items-center"><div class="flex items-center gap-xs"><span class="font-headline-md text-headline-md font-bold text-primary">TechNexus</span><span class="hidden md:inline px-2 py-0.5 rounded-full bg-primary-container/10 text-primary text-[10px] font-bold tracking-wider uppercase">Hotels</span></div><div class="hidden md:flex items-center gap-md"><a class="font-label-md text-label-md text-primary border-b-2 border-primary hover:text-primary transition-colors duration-200" href="#">Sectors</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Infrastructure</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Pricing</a></div><div class="flex items-center gap-sm"><button class="hidden sm:block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Login</button><button class="bg-accent-purple text-white px-md py-xs rounded-lg font-label-md text-label-md font-semibold hover:scale-102 transition-transform duration-200 active:scale-95">Deploy Now</button></div></div></nav><main class="pt-16"><!-- Hero Section --><section class="relative min-h-[921px] flex items-center overflow-hidden"><div class="absolute inset-0 z-0"><div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div></div><div class="max-w-container-max mx-auto px-gutter relative z-10 w-full py-xl text-center md:text-left"><div class="grid lg:grid-cols-2 gap-md items-center"><div><div class="inline-flex items-center gap-xs px-sm py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 mb-md"><span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span><span class="font-label-md text-label-md text-on-surface-variant">Next-Gen Booking Engine Live</span></div><h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight mb-md text-on-surface">
+                            High-Performance Infrastructure for the <span class="text-primary">Modern Hotelier.</span></h1><p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl">
+                            Convert lookers into bookers with ultra-low latency website infrastructure, real-time synchronization, and immersive visual storytelling.
+                        </p><div class="flex flex-col sm:flex-row gap-sm"><button class="px-xl py-md bg-primary text-white rounded-xl font-label-md text-label-md font-bold shadow-lg shadow-primary/20 hover:scale-102 transition-all">Start Your Performance Audit</button><button class="px-xl py-md bg-white border border-outline-variant text-on-surface rounded-xl font-label-md text-label-md font-bold hover:bg-surface-variant/20 transition-all flex items-center justify-center gap-xs"><span class="material-symbols-outlined">play_circle</span> View Demo
+                            </button></div></div><div class="relative hidden lg:block"><div class="relative z-10 rounded-2xl overflow-hidden border border-outline-variant/30 shadow-2xl"><img class="w-full aspect-[4/3] object-cover" data-alt="A hyper-realistic, 3D architectural render of a futuristic luxury hotel lobby at dusk. The lighting is warm and cinematic, featuring floor-to-ceiling glass walls, sleek marble floors, and floating geometric art installations. The overall aesthetic is minimalist and high-end, utilizing a palette of deep navy blues, crisp whites, and vibrant accent purple glows. The image feels technologically advanced and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtOjvaQnrbb4YlxlZylHOmegenwQ4BazK3yalxrJh2TY7nENKD24pxbtU6r5AuOVzH8Oa7BvRBd7URRykw6Tf5hoYVt8rvdy6b6r7zhVpoIQTFXC9ZrTQ56rieKKdSwbVXvQvkaYgt7f9nBdyHQn-SMAdhWnW4xbW5Dpc1aSNSGYgGkI9vImqAG2_EqVCXKB_-jPv5A5MiRr2DEMAd6zUNAJ9u33C4V9s6lksgNwKiW3P3PM6J1mLF"><div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-md rounded-xl flex items-center justify-between border border-white/50"><div><p class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">Direct Bookings Growth</p><p class="font-headline-md text-headline-md font-bold text-primary">+214%</p></div><div class="h-10 w-24"><svg class="w-full h-full text-primary fill-none stroke-current stroke-2" viewBox="0 0 100 40"><path d="M0 35 Q 25 35 35 25 T 60 10 T 100 5" stroke-linecap="round"></path></svg></div></div></div><div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div><div class="absolute -bottom-10 -left-10 w-64 h-64 bg-accent-purple/5 rounded-full blur-3xl"></div></div></div></div></section><!-- Bento Features Grid --><section class="py-xl bg-white"><div class="max-w-container-max mx-auto px-gutter"><div class="text-center mb-xl"><h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Engineered for Results</h2><p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Superior guest experiences start with invisible but powerful technology that eliminates friction at every touchpoint.</p></div><div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-md h-auto md:h-[600px]"><!-- Large Feature: Booking Engine --><div class="md:col-span-2 md:row-span-2 bento-card p-xl bg-surface border border-outline-variant/30 rounded-2xl flex flex-col justify-between group"><div><div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-md group-hover:bg-primary transition-colors"><span class="material-symbols-outlined text-primary group-hover:text-white" style="font-variation-settings: 'FILL' 1;">bolt</span></div><h3 class="font-headline-md text-headline-md mb-sm">Direct Booking Engine</h3><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Our high-conversion checkout flow reduces abandonments by 40% using behavioral science and lightning-fast edge processing.</p></div><div class="mt-lg overflow-hidden rounded-xl border border-outline-variant/20"><img class="w-full h-48 object-cover" data-alt="A high-fidelity UI mockup of a luxury hotel booking interface on a tablet. The design features large, crisp typography, intuitive calendar pickers, and high-resolution room photography. The interface uses a clean white background with primary blue accents. The lighting in the room photography is soft and natural, emphasizing a feeling of comfort and high-end hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMf2JOaeQR5keHy8-sv4R32nSAoLuQBAB20FmQpJfYAk0wAc3ZjzIwyKzKsiItkte5RSe48kkCX-nTanwRh3pLE2paOshLBYR2oW9rxKKIrq7GiYNwuWSHTh4GFR3MeBcK4Tc77Dt3rTzBWjB0kt3_lfAK2-qyHa5imDJ9VFA4-k42l8rUPERyl0wGszjFE3zMSFDaKXcyN0bvr6SCRMZh0Qt7vfJ7UEYFAZiUKpkiS3--IxqRJsSM"></div></div><!-- Medium Feature: Channel Sync --><div class="bento-card p-md bg-surface border border-outline-variant/30 rounded-2xl flex flex-col justify-between"><div><div class="w-10 h-10 rounded-lg bg-accent-purple/10 flex items-center justify-center mb-sm"><span class="material-symbols-outlined text-accent-purple">sync</span></div><h4 class="font-headline-md text-headline-md text-sm lg:text-md mb-xs">Real-time Inventory Sync</h4><p class="font-body-md text-body-md text-xs lg:text-sm text-on-surface-variant">Zero-latency updates across all OTAs and your direct site simultaneously.</p></div><div class="mt-sm flex -space-x-2"><div class="w-8 h-8 rounded-full bg-white border border-outline-variant flex items-center justify-center text-[10px] font-bold">BK</div><div class="w-8 h-8 rounded-full bg-white border border-outline-variant flex items-center justify-center text-[10px] font-bold">EXP</div><div class="w-8 h-8 rounded-full bg-white border border-outline-variant flex items-center justify-center text-[10px] font-bold">AIR</div></div></div><!-- Medium Feature: Visual Optimization --><div class="bento-card p-md bg-surface border border-outline-variant/30 rounded-2xl flex flex-col justify-between"><div><div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-sm"><span class="material-symbols-outlined text-primary">photo_library</span></div><h4 class="font-headline-md text-headline-md text-sm lg:text-md mb-xs">Visual Gallery Optimization</h4><p class="font-body-md text-body-md text-xs lg:text-sm text-on-surface-variant">Auto-optimized assets served via global CDN for immersive storytelling.</p></div><div class="mt-sm h-12 bg-surface-variant/30 rounded-lg overflow-hidden flex gap-1"><div class="w-1/3 h-full bg-surface-variant"></div><div class="w-1/3 h-full bg-surface-variant"></div><div class="w-1/3 h-full bg-surface-variant"></div></div></div></div></div></section><!-- Industry Vertical Integration (SideNav Map) --><section class="py-xl bg-surface-container overflow-hidden"><div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-4 gap-lg"><!-- Side Navigation from JSON --><div class="hidden lg:flex flex-col p-md bg-surface rounded-2xl border border-outline-variant/30 h-fit sticky top-24"><div class="mb-md"><h5 class="font-headline-md text-headline-md text-primary font-bold">Industry Solutions</h5><p class="font-body-md text-body-md text-on-surface-variant text-sm">Technical Specializations</p></div><nav class="flex flex-col gap-xs mb-lg"><a class="flex items-center gap-sm p-sm bg-primary-container text-on-primary-container rounded-lg transition-all" href="#"><span class="material-symbols-outlined">storefront</span><span class="font-body-md">Small Business</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">rocket_launch</span><span class="font-body-md">Startups</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">volunteer_activism</span><span class="font-body-md">NGOs</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">school</span><span class="font-body-md">Education</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">medical_services</span><span class="font-body-md">Medical</span></a><a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#"><span class="material-symbols-outlined">gavel</span><span class="font-body-md">Legal</span></a></nav><div class="pt-md border-t border-outline-variant/20"><button class="w-full py-sm bg-on-surface text-white rounded-lg font-label-md font-bold mb-md hover:opacity-90 transition-opacity">Contact Sales</button><div class="flex flex-col gap-xs"><a class="flex items-center gap-sm text-on-surface-variant text-sm hover:text-primary" href="#"><span class="material-symbols-outlined text-sm">description</span> Documentation</a><a class="flex items-center gap-sm text-on-surface-variant text-sm hover:text-primary" href="#"><span class="material-symbols-outlined text-sm">help</span> Support</a></div></div></div><!-- Main Content Area --><div class="lg:col-span-3"><div class="grid md:grid-cols-2 gap-md"><div class="p-lg bg-surface border border-outline-variant/30 rounded-2xl"><h3 class="font-headline-lg text-headline-lg mb-md">Tailored for Boutique Chains</h3><p class="font-body-md text-body-md text-on-surface-variant mb-lg">Managing multiple properties requires a unified source of truth. TechNexus provides a single dashboard for multi-property inventory, pricing, and guest data.</p><ul class="space-y-sm mb-lg"><li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="font-body-md">Centralized Guest Profiles</span></li><li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="font-body-md">Universal API for Legacy PMS</span></li><li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="font-body-md">Custom Mobile Apps for Staff</span></li></ul><div class="aspect-video rounded-xl bg-surface-variant/20 border border-outline-variant/10 flex items-center justify-center"><img class="w-full h-full object-cover rounded-xl" data-alt="A clean, minimalist workspace scene featuring an ultra-slim laptop displaying a technical dashboard. The screen shows complex data visualizations, server health charts, and room availability maps in a sophisticated dark-mode UI with primary blue highlights. The background is a blurred, high-end office interior with neutral tones and soft natural light from a large window. Professional and technical mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvbEaaiaxz_vlLg4h9UZ29yfZ40iGwvKrrFqjZahv5yLThVuSsmnUfzw385IW0nPlmk31aylxqYVEWfhlRb7QCXvUlelabTmtFLeg5ECsDDZgN3uEI9LcwkhouGvig1AEdrjCL4zk85QDshDy3qY4_hpArPQWRPJms7EgVO0rtRYSItBzjZkjYGRn-lEx1towAtqOkbviQN28MM04rQRohexrcDT6AVeTIZUtIwPECQGl8_wRrSvGF"></div></div><div class="space-y-md"><div class="p-lg bg-primary-container text-on-primary-container rounded-2xl relative overflow-hidden group"><div class="relative z-10"><h4 class="font-headline-md text-headline-md mb-xs">Direct-First Strategy</h4><p class="opacity-80 mb-md">Shift your booking mix away from high-commission OTAs and reclaim your margin with our built-in loyalty and retention tools.</p><button class="bg-white text-primary px-md py-sm rounded-lg font-bold hover:scale-105 transition-transform">Explore Loyalty Engine</button></div><div class="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform duration-700"><span class="material-symbols-outlined text-[120px]">loyalty</span></div></div><div class="p-lg bg-white border border-outline-variant/30 rounded-2xl"><h4 class="font-headline-md text-headline-md mb-xs">Global Edge Network</h4><p class="text-on-surface-variant mb-md">Your hotel's website loaded in under 400ms from Tokyo to New York. Speed is the silent architect of conversion.</p><div class="h-32 w-full bg-surface-container-low rounded-lg p-sm relative overflow-hidden"><div class="absolute top-4 left-4 flex gap-2"><div class="w-2 h-2 rounded-full bg-primary animate-ping"></div><span class="text-[10px] font-mono text-primary font-bold">EDGE_NODE: LONDON_01</span></div><div class="mt-8 space-y-2"><div class="h-1 bg-primary/20 rounded-full overflow-hidden"><div class="h-full bg-primary w-3/4 animate-[progress_2s_ease-in-out_infinite]"></div></div><div class="h-1 bg-primary/20 rounded-full overflow-hidden"><div class="h-full bg-primary w-1/2 animate-[progress_1.5s_ease-in-out_infinite]"></div></div></div></div></div></div></div></div></div></section><!-- CTA Section --><section class="py-xl relative"><div class="max-w-container-max mx-auto px-gutter text-center"><div class="bg-on-background p-xl rounded-[2.5rem] relative overflow-hidden"><div class="relative z-10 flex flex-col items-center"><h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-white mb-md">Ready to upgrade your infrastructure?</h2><p class="text-white/70 font-body-lg text-body-lg max-w-2xl mb-lg">Join 1,200+ luxury properties that have switched to TechNexus for a better guest experience and higher ROI.</p><div class="flex flex-col sm:flex-row gap-sm"><button class="bg-accent-purple text-white px-xl py-md rounded-xl font-bold hover:bg-accent-purple/90 transition-colors">Launch Deployment</button><button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-xl py-md rounded-xl font-bold hover:bg-white/20 transition-colors">Talk to an Architect</button></div></div></div></div></section></main><!-- Footer --><script>
+        // Micro-interactions and hover effects
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Floating Header Animation on Scroll
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+            lastScroll = currentScroll;
+        });
+    </script><style>
+        @keyframes progress {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style><footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-sm px-gutter py-xl max-w-container-max mx-auto"><div class="col-span-2"><div class="font-headline-md text-headline-md font-black text-on-surface mb-4">Domain Web Hosting</div><p class="text-on-surface-variant text-body-md max-w-xs mb-6">High-performance hosting and custom development solutions for the modern web. Call us: 0723658888</p><div class="flex gap-4"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a></div></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Services</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="/website-development/">Website Development</a></li><li><a class="hover:text-secondary transition-colors" href="/hosting/">Managed Hosting</a></li><li><a class="hover:text-secondary transition-colors" href="/domain-registration/">Domain Search</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Company</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Pricing Tiers</a></li><li><a class="hover:text-secondary transition-colors" href="/portfolio/">Portfolio</a></li><li><a class="hover:text-secondary transition-colors" href="#">Knowledge Base</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Legal</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Support</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> 0723658888</li><li><a class="hover:text-secondary transition-colors" href="#">Ticket System</a></li></ul></div></div><div class="max-w-container-max mx-auto px-gutter py-8 border-t border-outline-variant/30 text-on-surface-variant text-sm flex flex-col md:flex-row justify-between items-center gap-4"><span>© 2024 Domain Web Hosting. Engineered for performance.</span><div class="flex gap-6"><a class="hover:text-primary transition-colors" href="#">Status</a><a class="hover:text-primary transition-colors" href="#">Careers</a><a class="hover:text-primary transition-colors" href="#">Blog</a></div></div></footer></body></html>

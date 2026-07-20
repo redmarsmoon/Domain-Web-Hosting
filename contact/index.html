@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Contact Us - TechNexus</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-high": "#e8e7f3",
+                "inverse-primary": "#b7c4ff",
+                "surface": "#f7f9fb",
+                "on-secondary-fixed-variant": "#5a00c6",
+                "on-error": "#ffffff",
+                "on-surface": "#191c1e",
+                "secondary": "#712ae2",
+                "primary-fixed": "#dde1ff",
+                "on-background": "#1a1b23",
+                "accent-purple": "#7c3aed",
+                "surface-container": "#ededf8",
+                "surface-container-lowest": "#ffffff",
+                "surface-tint": "#004ced",
+                "on-surface-variant": "#434654",
+                "on-tertiary-fixed": "#131b2f",
+                "background": "#fbf8ff",
+                "tertiary-fixed": "#dae2fd",
+                "on-primary-fixed-variant": "#0038b6",
+                "on-tertiary-container": "#b6bed8",
+                "tertiary-container": "#454d63",
+                "primary-container": "#003ec7",
+                "secondary-container": "#8b4bfc",
+                "surface-dim": "#d9d9e4",
+                "primary": "#002b92",
+                "on-primary": "#ffffff",
+                "on-secondary-container": "#fffbff",
+                "outline": "#737688",
+                "surface-variant": "#e0e3e5",
+                "error-container": "#ffdad6",
+                "surface-container-low": "#f3f2fe",
+                "secondary-fixed": "#eaddff",
+                "on-tertiary": "#ffffff",
+                "surface-bright": "#fbf8ff",
+                "on-secondary-fixed": "#25005a",
+                "error": "#ba1a1a",
+                "surface-container-highest": "#e2e1ed",
+                "tertiary-fixed-dim": "#bec6e0",
+                "inverse-surface": "#2f3039",
+                "inverse-on-surface": "#f0f0fb",
+                "tertiary": "#2e364b",
+                "on-primary-container": "#adbcff",
+                "outline-variant": "#c4c5d7",
+                "on-primary-fixed": "#001452",
+                "on-tertiary-fixed-variant": "#3e465c",
+                "primary-fixed-dim": "#b7c4ff",
+                "secondary-fixed-dim": "#d2bbff",
+                "on-secondary": "#ffffff",
+                "on-error-container": "#93000a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px",
+                "md": "0.375rem"
+        },
+        "spacing": {
+                "base": "4px",
+                "sm": "16px",
+                "lg": "48px",
+                "gutter": "24px",
+                "md": "24px",
+                "xs": "8px",
+                "container-max": "1280px",
+                "xl": "80px"
+        },
+        "fontFamily": {
+                "label-md": [
+                        "Geist"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Geist"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "mono-sm": [
+                        "Geist"
+                ],
+                "headline-lg": [
+                        "Geist"
+                ],
+                "display-lg-mobile": [
+                        "Geist"
+                ],
+                "headline-md": [
+                        "Geist"
+                ]
+        },
+        "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "mono-sm": [
+                        "13px",
+                        {
+                                "lineHeight": "1.5",
+                                "letterSpacing": "0em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.03em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script><style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .font-display {
+        font-family: 'Geist', sans-serif;
+    }
+    
+    .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+</style></head><body class="bg-background text-on-background min-h-screen flex flex-col antialiased"><header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 w-full h-20"><div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full"><div class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dns</span><a class="text-body-lg font-headline-lg font-bold tracking-tighter text-on-surface" href="/">Domain Web Hosting</a></div><nav class="hidden md:flex items-center space-x-md"><a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="/hosting/">Hosting</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/domain-registration/">Domains</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/portfolio/">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Resources</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/contact/">Support</a></nav><div class="flex items-center gap-sm"><button class="font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95">Client Login</button><a class="font-label-md text-label-md px-6 py-2.5 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95" href="/contact/" style="display: inline-block; text-align: center;">Contact</a></div></div></header><!-- Top NavBar - Shared Component (Glassmorphism variation requested) --><main class="flex-grow pt-[88px] pb-xl flex flex-col items-center"><!-- Hero Section --><section class="w-full max-w-container-max px-gutter pt-16 pb-12 text-center flex flex-col items-center"><h1 class="font-display text-display-lg-mobile md:text-display-lg text-on-surface mb-6 max-w-4xl">
+            Let's build the future together.
+        </h1><p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            We are here to help with both custom development and managed infrastructure. Whether you need a new web application or 24/7 server support, our team is ready to assist.
+        </p></section><!-- Main Content Layout --><div class="w-full max-w-container-max px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-xl"><!-- Left Column: Contact Form --><div class="lg:col-span-7 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm relative overflow-hidden"><!-- Subtle accent top border --><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent-purple"></div><h2 class="font-display text-headline-md text-on-surface mb-6">Send us a message</h2><form class="flex flex-col gap-6"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><label class="flex flex-col flex-1"><span class="font-display text-label-md text-on-surface mb-2">Name</span><input class="form-input w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface placeholder:text-outline transition-colors" placeholder="Jane Doe" required="" type="text"></label><label class="flex flex-col flex-1"><span class="font-display text-label-md text-on-surface mb-2">Email</span><input class="form-input w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface placeholder:text-outline transition-colors" placeholder="jane@company.com" required="" type="email"></label></div><label class="flex flex-col flex-1"><span class="font-display text-label-md text-on-surface mb-2">Service Interest</span><div class="relative"><select class="form-select w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface appearance-none pr-10 transition-colors cursor-pointer" required=""><option disabled="" selected="" value="">Select a service...</option><option value="development">Website &amp; App Development</option><option value="infrastructure">Managed Hosting &amp; Infrastructure</option><option value="both">Both Development &amp; Infrastructure</option><option value="other">Other Inquiries</option></select></div></label><label class="flex flex-col flex-1"><span class="font-display text-label-md text-on-surface mb-2">Message</span><textarea class="form-textarea w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md text-on-surface placeholder:text-outline min-h-[160px] resize-y transition-colors p-3" placeholder="Tell us about your project or support needs..." required=""></textarea></label><div class="pt-2 flex justify-end"><button class="bg-primary hover:bg-primary-container text-on-primary font-display font-medium rounded-md px-8 py-3 text-body-md transition-colors shadow-sm flex items-center gap-2" type="submit">
+                        Send Message
+                        <span class="material-symbols-outlined text-[20px]">send</span></button></div></form></div><!-- Right Column: Direct Contact Methods --><div class="lg:col-span-5 flex flex-col gap-8"><!-- Sales & Projects Card (Creative focus - Accent Purple) --><div class="bg-surface-container-low p-6 rounded-lg border border-secondary-fixed"><div class="flex items-start gap-4 mb-4"><div class="bg-secondary text-on-secondary p-2 rounded-md shadow-sm"><span class="material-symbols-outlined">lightbulb</span></div><div><h3 class="font-display text-[20px] font-semibold text-on-surface leading-tight">Sales &amp; Projects</h3><p class="text-body-md text-on-surface-variant mt-1">For custom web apps, corporate sites, and design engagements.</p></div></div><div class="mt-4 flex flex-col gap-3"><button class="w-full bg-surface-container-lowest hover:bg-secondary-fixed text-secondary font-display font-medium rounded-md px-4 py-2.5 border border-secondary-fixed-dim transition-colors flex items-center justify-center gap-2"><span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                        Schedule a Discovery Call
+                    </button><div class="flex items-center gap-3 text-body-md text-on-surface-variant mt-2"><span class="material-symbols-outlined text-outline">mail</span><a class="hover:text-secondary hover:underline transition-colors" href="mailto:sales@technexus.com">sales@technexus.com</a></div></div></div><!-- Technical Support Card (Infrastructure focus - Primary Blue) --><div class="bg-surface-container-low p-6 rounded-lg border border-primary-fixed"><div class="flex items-start gap-4 mb-4"><div class="bg-primary text-on-primary p-2 rounded-md shadow-sm"><span class="material-symbols-outlined">dns</span></div><div><h3 class="font-display text-[20px] font-semibold text-on-surface leading-tight">Technical Support</h3><p class="text-body-md text-on-surface-variant mt-1">For existing managed infrastructure and SLA clients.</p></div></div><div class="mt-4 flex flex-col gap-3"><a class="w-full bg-surface-container-lowest hover:bg-primary-fixed text-primary font-display font-medium rounded-md px-4 py-2.5 border border-primary-fixed-dim transition-colors flex items-center justify-center gap-2" href="/contact/">
+                        Go to Support Dashboard
+                        <span class="material-symbols-outlined text-[20px]">open_in_new</span></a><div class="mt-2 pt-4 border-t border-outline-variant/30"><p class="font-display text-mono-sm font-medium text-outline uppercase tracking-wider mb-2">24/7 Emergency Contact</p><div class="flex items-center gap-3 text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-outline">phone_in_talk</span><a class="font-mono text-primary font-medium hover:underline" href="tel:+18005550199">+1 (800) 555-0199</a></div></div></div></div><!-- General Inquiries --><div class="px-2"><h3 class="font-display text-body-lg font-semibold text-on-surface mb-3">General Inquiries</h3><div class="flex flex-col gap-3"><div class="flex items-start gap-3 text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-outline mt-0.5 text-[20px]">mail</span><a class="hover:text-primary transition-colors" href="mailto:hello@technexus.com">hello@technexus.com</a></div><div class="flex items-start gap-3 text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-outline mt-0.5 text-[20px]">location_on</span><address class="not-italic text-sm">
+                            TechNexus Inc.<br>
+                            100 Innovation Drive, Suite 400<br>
+                            San Francisco, CA 94103
+                        </address></div></div></div></div></div><!-- Office Locations Section --><section class="w-full max-w-container-max px-gutter mb-xl"><h2 class="font-display text-headline-md text-on-surface text-center mb-10">Global Presence</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"><!-- San Francisco Card --><div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col group hover:border-primary-fixed-dim transition-colors shadow-sm hover:shadow-md"><div class="h-48 bg-surface-variant relative overflow-hidden" data-alt="A modern, high-quality architectural photograph of a sleek office building in San Francisco, capturing the essence of the technology hub during daytime with bright, crisp natural lighting. The aesthetic is clean, professional, and aligns with a light mode color palette featuring subtle cool blues and architectural grays." data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcCdvu2_r7-JAdCqssW6YVoQ2XV_1qtbO-SacYf7oxFy1e6IMIzgvyKXEaBM_rwzZHi-F2iuHdk6vSRaLJ3rck39whCViJnwjBTNtSy9zvMMnReAaDrbVi9Ro92xeKuH6edBbTDcPCAROK3mVT_Dysh7zyaEzB200m0dP8KKgT910A4QnYwBjxgUUmcS50e2VcUFZyu5e59lIrbLfIjx049BRN1G_gkiKGEnljzlbGkqprqm2JPwfb')"><!-- Optional overlay for contrast if map is light --><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h4 class="font-display font-semibold text-lg drop-shadow-md">San Francisco</h4><span class="text-sm opacity-90 drop-shadow-md font-mono">Headquarters</span></div></div><div class="p-6 flex flex-col gap-2 bg-surface-container-lowest flex-grow"><address class="not-italic text-body-md text-on-surface-variant">
+                        100 Innovation Drive, Suite 400<br>
+                        San Francisco, CA 94103<br>
+                        United States
+                    </address><div class="mt-4 pt-4 border-t border-outline-variant/50 text-sm text-outline font-medium">
+                        Local Time: <span class="font-mono text-on-surface-variant">PST (UTC-8)</span></div></div></div><!-- London Card --><div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col group hover:border-primary-fixed-dim transition-colors shadow-sm hover:shadow-md"><div class="h-48 bg-surface-variant relative overflow-hidden" data-alt="A sophisticated architectural shot of a modern office space in London, blending contemporary glass design with subtle historic elements nearby. The scene is brightly lit with natural daylight, conveying a professional, crisp, light-mode aesthetic dominated by clean architectural lines and neutral tones with soft blue skies." data-location="London" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApr1q-f8fUi3XVqO-nRRswpd4ldkrJncnSlniBa36GWBzaX_SYRwQo5wVb5vcO6EmXlilYlzk95QW5oEVKvs-VC-QqsIQYhYk_pPxzJ5KKbPSVNdjnj8z9b7kdbHFVip00XpQ0k_pHIYGb1Jdg1W908qkefhQxFrqxMEmAZxCYIc5nITXLpclSYxWZsXhb-Xf3mWtr_cq35vkrixpqnJwr3YDJYFEuddYcGcXJQ-tB8A7-z488MxUY')"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h4 class="font-display font-semibold text-lg drop-shadow-md">London</h4><span class="text-sm opacity-90 drop-shadow-md font-mono">EMEA Hub</span></div></div><div class="p-6 flex flex-col gap-2 bg-surface-container-lowest flex-grow"><address class="not-italic text-body-md text-on-surface-variant">
+                        25 Tech Square, Floor 3<br>
+                        Shoreditch, London E1 6AN<br>
+                        United Kingdom
+                    </address><div class="mt-4 pt-4 border-t border-outline-variant/50 text-sm text-outline font-medium">
+                        Local Time: <span class="font-mono text-on-surface-variant">GMT (UTC+0)</span></div></div></div></div></section><!-- FAQ Quick Links --><section class="w-full max-w-container-max px-gutter mb-12 bg-surface-container py-8 rounded-xl border border-surface-dim mx-auto max-w-4xl text-center"><h3 class="font-display text-body-lg font-semibold text-on-surface mb-4">Common Questions</h3><p class="text-body-md text-on-surface-variant mb-6 max-w-2xl mx-auto">Before reaching out, you might find the answer you need in our knowledge base.</p><div class="flex flex-wrap justify-center gap-4"><a class="inline-flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-full border border-outline-variant text-sm font-medium text-on-surface hover:border-primary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span>
+                Billing &amp; Invoicing
+            </a><a class="inline-flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-full border border-outline-variant text-sm font-medium text-on-surface hover:border-primary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">speed</span>
+                SLA Guarantees
+            </a><a class="inline-flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-full border border-outline-variant text-sm font-medium text-on-surface hover:border-primary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">code_blocks</span>
+                Tech Stack Capabilities
+            </a><a class="inline-flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-full border border-outline-variant text-sm font-medium text-on-surface hover:text-secondary hover:border-secondary transition-colors" href="#">
+                View All FAQs
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></section></main><!-- Simple Footer for Context (Generating a clean, consistent footer) --><footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full"><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-sm px-gutter py-xl max-w-container-max mx-auto"><div class="col-span-2"><div class="font-headline-md text-headline-md font-black text-on-surface mb-4">Domain Web Hosting</div><p class="text-on-surface-variant text-body-md max-w-xs mb-6">High-performance hosting and custom development solutions for the modern web. Call us: 0723658888</p><div class="flex gap-4"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a></div></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Services</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="/website-development/">Website Development</a></li><li><a class="hover:text-secondary transition-colors" href="/hosting/">Managed Hosting</a></li><li><a class="hover:text-secondary transition-colors" href="/domain-registration/">Domain Search</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Company</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Pricing Tiers</a></li><li><a class="hover:text-secondary transition-colors" href="/portfolio/">Portfolio</a></li><li><a class="hover:text-secondary transition-colors" href="#">Knowledge Base</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Legal</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li></ul></div><div><h5 class="font-label-md text-on-surface font-bold mb-4">Support</h5><ul class="space-y-2 text-on-surface-variant text-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> 0723658888</li><li><a class="hover:text-secondary transition-colors" href="#">Ticket System</a></li></ul></div></div><div class="max-w-container-max mx-auto px-gutter py-8 border-t border-outline-variant/30 text-on-surface-variant text-sm flex flex-col md:flex-row justify-between items-center gap-4"><span>© 2024 Domain Web Hosting. Engineered for performance.</span><div class="flex gap-6"><a class="hover:text-primary transition-colors" href="#">Status</a><a class="hover:text-primary transition-colors" href="#">Careers</a><a class="hover:text-primary transition-colors" href="#">Blog</a></div></div></footer></body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>TechNexus | My Websites</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fbf8ff",
+                    "tertiary-fixed": "#dae2fd",
+                    "inverse-primary": "#b7c4ff",
+                    "inverse-surface": "#2f3039",
+                    "on-tertiary-container": "#b6bed8",
+                    "surface-container-high": "#e8e7f3",
+                    "on-error-container": "#93000a",
+                    "primary": "#002b92",
+                    "surface-container-low": "#f3f2fe",
+                    "outline-variant": "#c4c5d7",
+                    "on-surface": "#191c1e",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#3e465c",
+                    "surface-container-highest": "#e2e1ed",
+                    "background": "#fbf8ff",
+                    "on-secondary-fixed": "#25005a",
+                    "surface-dim": "#d9d9e4",
+                    "on-background": "#1a1b23",
+                    "secondary-fixed": "#eaddff",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#ededf8",
+                    "outline": "#737688",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "primary-fixed": "#dde1ff",
+                    "surface": "#f7f9fb",
+                    "on-secondary-container": "#fffbff",
+                    "primary-container": "#003ec7",
+                    "on-primary-fixed-variant": "#0038b6",
+                    "surface-variant": "#e0e3e5",
+                    "accent-purple": "#7c3aed",
+                    "on-primary-fixed": "#001452",
+                    "tertiary": "#2e364b",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#8b4bfc",
+                    "on-tertiary-fixed": "#131b2f",
+                    "on-primary-container": "#adbcff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#434654",
+                    "secondary": "#712ae2",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "tertiary-container": "#454d63",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#004ced"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "xs": "8px",
+                    "gutter": "24px",
+                    "lg": "48px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "mono-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display-lg-mobile": ["Geist"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Geist"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "mono-sm": ["13px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script><style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #fbf8ff;
+      }
+      .glass-nav {
+        background: rgba(247, 249, 251, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .card-hover:hover {
+        border-color: #002b92;
+        transition: border-color 0.2s ease;
+      }
+    </style></head><body class="font-body-md text-on-background min-h-screen"><header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 w-full h-20"><div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full"><div class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dns</span><a class="text-body-lg font-headline-lg font-bold tracking-tighter text-on-surface" href="/">Domain Web Hosting</a></div><nav class="hidden md:flex items-center space-x-md"><a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="/hosting/">Hosting</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/domain-registration/">Domains</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/portfolio/">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Resources</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/contact/">Support</a></nav><div class="flex items-center gap-sm"><button class="font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95">Client Login</button><a class="font-label-md text-label-md px-6 py-2.5 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95" href="/contact/" style="display: inline-block; text-align: center;">Contact</a></div></div></header><!-- SideNavBar (Shared Component) --><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline flex flex-col h-full py-md px-sm z-50"><div class="mb-lg px-xs"><h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">TechNexus</h1><p class="font-body-md text-on-surface-variant text-xs opacity-70">Infrastructure Management</p></div><nav class="flex-1 space-y-1"><!-- Websites Active --><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-primary dark:text-inverse-primary font-bold border-r-4 border-primary dark:border-inverse-primary bg-surface-container-low dark:bg-surface-container-highest transition-all duration-200" href="#"><span class="material-symbols-outlined">language</span><span class="font-label-md text-label-md">Websites</span></a><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200" href="#"><span class="material-symbols-outlined">dns</span><span class="font-label-md text-label-md">Hosting</span></a><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200" href="#"><span class="material-symbols-outlined">domain</span><span class="font-label-md text-label-md">Domains</span></a><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200" href="#"><span class="material-symbols-outlined">payments</span><span class="font-label-md text-label-md">Billing</span></a><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200" href="#"><span class="material-symbols-outlined">receipt_long</span><span class="font-label-md text-label-md">Invoices</span></a><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200" href="#"><span class="material-symbols-outlined">contact_support</span><span class="font-label-md text-label-md">Support Tickets</span></a><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200" href="#"><span class="material-symbols-outlined">chat</span><span class="font-label-md text-label-md">Live Chat</span></a></nav><div class="mt-auto pt-md border-t border-outline-variant space-y-1"><button class="w-full bg-accent-purple text-on-primary py-xs px-sm rounded-xl font-bold flex items-center justify-center gap-xs hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-sm mb-md"><span class="material-symbols-outlined">add</span><span class="font-label-md text-label-md">Deploy New Service</span></button><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">settings</span><span class="font-label-md text-label-md">Settings</span></a><a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant hover:text-error transition-colors" href="#"><span class="material-symbols-outlined">logout</span><span class="font-label-md text-label-md">Logout</span></a></div></aside><!-- Main Content Shell --><div class="ml-64 flex flex-col min-h-screen"><!-- TopAppBar (Shared Component) --><!-- Canvas --><main class="flex-1 p-gutter max-w-container-max mx-auto w-full"><!-- Page Header --><div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg"><div><h2 class="font-headline-lg text-headline-lg text-on-surface">My Websites</h2><p class="font-body-md text-on-surface-variant max-w-xl">Monitor and manage your active deployments, staging environments, and core infrastructure health across the global edge network.</p></div><button class="bg-primary text-on-primary px-lg py-xs rounded-xl font-bold flex items-center gap-xs hover:scale-[1.02] transition-transform active:scale-[0.98] shadow-md"><span class="material-symbols-outlined">rocket_launch</span><span class="font-label-md text-label-md">Deploy New Website</span></button></div><!-- Dashboard Overview Stats --><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-lg"><div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col gap-xs"><span class="text-on-surface-variant font-label-md text-sm">Total Deployments</span><div class="flex items-center justify-between"><span class="font-headline-md text-headline-md text-on-surface">24</span><span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">+2 this month</span></div></div><div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col gap-xs"><span class="text-on-surface-variant font-label-md text-sm">Uptime (24h)</span><div class="flex items-center justify-between"><span class="font-headline-md text-headline-md text-on-surface">99.98%</span><span class="material-symbols-outlined text-green-500">check_circle</span></div></div><div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col gap-xs"><span class="text-on-surface-variant font-label-md text-sm">Active Staging</span><div class="flex items-center justify-between"><span class="font-headline-md text-headline-md text-on-surface">06</span><span class="text-xs bg-surface-variant text-on-surface-variant px-2 py-1 rounded-full">Dev-Ready</span></div></div><div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col gap-xs"><span class="text-on-surface-variant font-label-md text-sm">Bandwidth Used</span><div class="flex items-center justify-between"><span class="font-headline-md text-headline-md text-on-surface">1.2 TB</span><span class="text-xs text-outline">of 5 TB</span></div></div></div><!-- Websites Table --><div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm"><div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead><tr class="bg-surface-container border-b border-outline-variant"><th class="px-gutter py-md font-label-md text-on-surface-variant uppercase text-xs tracking-wider">Project &amp; URL</th><th class="px-gutter py-md font-label-md text-on-surface-variant uppercase text-xs tracking-wider">Status</th><th class="px-gutter py-md font-label-md text-on-surface-variant uppercase text-xs tracking-wider">Last Backup</th><th class="px-gutter py-md font-label-md text-on-surface-variant uppercase text-xs tracking-wider text-right">Actions</th></tr></thead><tbody class="divide-y divide-outline-variant"><!-- Site Row 1 --><tr class="hover:bg-surface-container-low transition-colors group"><td class="px-gutter py-md"><div class="flex items-center gap-md"><div class="h-10 w-10 bg-primary-fixed rounded-lg flex items-center justify-center text-primary"><span class="material-symbols-outlined">data_object</span></div><div><p class="font-label-md text-on-surface font-bold">nexus-e-commerce-prod</p><a class="text-xs text-primary hover:underline flex items-center gap-1" href="#">
+                                                https://nexus-store.com
+                                                <span class="material-symbols-outlined text-[12px]">open_in_new</span></a></div></div></td><td class="px-gutter py-md"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700 border border-green-200"><span class="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                                        Live
+                                    </span></td><td class="px-gutter py-md"><div class="flex flex-col"><span class="text-body-md text-on-surface text-sm">Oct 24, 2023</span><span class="text-xs text-on-surface-variant">04:12 AM UTC</span></div></td><td class="px-gutter py-md text-right"><div class="flex items-center justify-end gap-xs"><button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-all active:scale-95 group/btn flex items-center gap-1"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="text-xs font-bold hidden xl:inline">Manage</span></button><button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-all active:scale-95 flex items-center gap-1"><span class="material-symbols-outlined text-[20px]">history</span><span class="text-xs font-bold hidden xl:inline">Backups</span></button><button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-all active:scale-95"><span class="material-symbols-outlined text-[20px]">settings</span></button></div></td></tr><!-- Site Row 2 --><tr class="hover:bg-surface-container-low transition-colors group"><td class="px-gutter py-md"><div class="flex items-center gap-md"><div class="h-10 w-10 bg-secondary-fixed rounded-lg flex items-center justify-center text-secondary"><span class="material-symbols-outlined">brush</span></div><div><p class="font-label-md text-on-surface font-bold">portfolio-v3-staging</p><a class="text-xs text-primary hover:underline flex items-center gap-1" href="#">
+                                                https://stg.nexus-portfolio.io
+                                                <span class="material-symbols-outlined text-[12px]">open_in_new</span></a></div></div></td><td class="px-gutter py-md"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-tertiary-fixed text-tertiary-fixed-dim border border-outline-variant"><span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span>
+                                        Staging
+                                    </span></td><td class="px-gutter py-md"><div class="flex flex-col"><span class="text-body-md text-on-surface text-sm">Oct 23, 2023</span><span class="text-xs text-on-surface-variant">11:45 PM UTC</span></div></td><td class="px-gutter py-md text-right"><div class="flex items-center justify-end gap-xs"><button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-all active:scale-95 group/btn flex items-center gap-1"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="text-xs font-bold hidden xl:inline">Manage</span></button><button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-all active:scale-95 flex items-center gap-1"><span class="material-symbols-outlined text-[20px]">history</span><span class="text-xs font-bold hidden xl:inline">Backups</span></button><button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-all active:scale-95"><span class="material-symbols-outlined text-[20px]">settings</span></button></div></td></tr><!-- Site Row 3 --><tr class="hover:bg-surface-container-low transition-colors group"><td class="px-gutter py-md"><div class="flex items-center gap-md"><div class="h-10 w-10 bg-surface-variant rounded-lg flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined">api</span></div><div><p class="font-label-md text-on-surface font-bold">internal-api-services</p><a class="text-xs text-primary hover:underline flex items-center gap-1" href="#">
+                                                https://api.technexus.cloud
+                                                <span class="material-symbols-outlined text-[12px]">open_in_new</span></a></div></div></td><td class="px-gutter py-md"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700 border border-green-200"><span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                                        Live
+                                    </span></td><td class="px-gutter py-md"><div class="flex flex-col"><span class="text-body-md text-on-surface text-sm">Oct 24, 2023</span><span class="text-xs text-on-surface-variant">08:00 AM UTC</span></div></td><td class="px-gutter py-md text-right"><div class="flex items-center justify-end gap-xs"><button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-all active:scale-95 group/btn flex items-center gap-1"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="text-xs font-bold hidden xl:inline">Manage</span></button><button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-all active:scale-95 flex items-center gap-1"><span class="material-symbols-outlined text-[20px]">history</span><span class="text-xs font-bold hidden xl:inline">Backups</span></button><button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-all active:scale-95"><span class="material-symbols-outlined text-[20px]">settings</span></button></div></td></tr></tbody></table></div><!-- Pagination --><div class="px-gutter py-sm border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest"><p class="text-xs text-on-surface-variant">Showing 1 to 3 of 24 projects</p><div class="flex items-center gap-xs"><button class="p-1.5 border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled=""><span class="material-symbols-outlined text-sm">chevron_left</span></button><button class="px-3 py-1.5 border border-primary bg-primary-container/10 text-primary rounded-lg text-xs font-bold">1</button><button class="px-3 py-1.5 border border-outline-variant rounded-lg text-xs hover:bg-surface-container-low transition-colors">2</button><button class="px-3 py-1.5 border border-outline-variant rounded-lg text-xs hover:bg-surface-container-low transition-colors">3</button><button class="p-1.5 border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button></div></div></div><!-- Contextual Banner --><div class="mt-lg p-md bg-secondary-container text-on-secondary-container rounded-2xl flex flex-col md:flex-row items-center gap-md"><div class="h-12 w-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined">speed</span></div><div class="flex-1"><h4 class="font-label-md text-on-secondary-container font-bold">New: Global Edge Caching 2.0</h4><p class="text-sm opacity-90">Experience up to 40% faster load times with our new automated asset optimization engine. Available for all production sites.</p></div><button class="bg-white text-secondary font-bold px-md py-xs rounded-lg text-xs hover:bg-on-secondary transition-colors">Enable Globally</button></div></main></div><!-- Micro-interactions Script --><script>
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('scale-95');
+            });
+            el.addEventListener('mouseup', () => {
+                el.classList.remove('scale-95');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('scale-95');
+            });
+        });
+
+        // Search highlight interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
+        });
+    </script></body></html>
