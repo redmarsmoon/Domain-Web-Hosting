@@ -315,35 +315,134 @@ tailwind.config = {
 
 <!-- Main Content Shell -->
 <main class="ml-64 mt-16 p-gutter flex gap-12 max-w-[1440px] mx-auto min-h-screen">
-<div class="max-w-3xl mx-auto px-gutter py-xl">
-<h2>Understanding Mutual TLS (mTLS)</h2>
-        <p>Mutual TLS (mTLS) ensures that traffic between microservices is secure and trusted in both directions. In a standard TLS connection, only the server proves its identity. With mTLS, the client must also authenticate itself to the server.</p>
-<h2>Why mTLS is crucial for Microservices</h2>
-        <p>In a distributed architecture, services communicate over a network, making them vulnerable to man-in-the-middle attacks. mTLS provides:</p>
-        <ul>
-            <li><strong>Encryption:</strong> Data in transit is unreadable to interceptors.</li>
-            <li><strong>Authentication:</strong> Only authorized services can communicate.</li>
-            <li><strong>Zero Trust:</strong> Enforces a "never trust, always verify" model internally.</li>
-        </ul>
-<h2>Implementation Steps using Istio</h2>
-        <p>If you're using Kubernetes, a service mesh like Istio simplifies mTLS implementation.</p>
-        <ol>
-            <li>Install Istio and enable automatic sidecar injection for your namespace.</li>
-            <li>Apply a PeerAuthentication policy to enforce mTLS:</li>
-        </ol>
-<p><pre><code>apiVersion: security.istio.io/v1beta1<br />
-kind: PeerAuthentication<br />
-metadata:<br />
-  name: default<br />
-  namespace: my-namespace<br />
-spec:<br />
-  mtls:<br />
-    mode: STRICT</code></pre></p>
-<h2>Monitoring and Troubleshooting</h2>
-        <p>Once enabled, verify that traffic is encrypted by checking the Istio metrics or using Kiali for visualization. Ensure certificates are properly rotating to prevent downtime.</p>
+    
+    
+    <!-- Left Section: Article Content -->
+    <div class="flex-1 max-w-[840px]">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-lg">
+            <a href="/knowledge-base/" class="hover:text-primary transition-colors">Knowledge Base</a>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="text-on-surface font-bold">Implementing Mutual TLS for Microservices</span>
+        </nav>
 
-</div>
-</main>
+        <!-- Article Header -->
+        <header class="mb-lg">
+            <h1 class="font-display-lg text-display-lg mb-sm text-primary leading-tight">Implementing Mutual TLS for Microservices</h1>
+            <div class="flex flex-wrap gap-6 items-center text-label-md font-label-md text-on-surface-variant">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                    Last updated: Jul 2026                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">folder</span>
+                    Category: Guides
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-content font-body-md text-body-md text-on-surface-variant">
+            <p>As microservice architectures become increasingly complex, securing the communication between internal services is just as critical as securing the public perimeter. Mutual TLS (mTLS) is the gold standard for Zero Trust networking. In this comprehensive guide, we explain the mechanics of mTLS and how to implement it effectively within a modern microservices ecosystem.</p>
+<h2>The Need for Zero Trust Networking</h2>
+<p>Historically, corporate networks operated on a &#8220;castle-and-moat&#8221; model. Once a request bypassed the external firewall, it was largely trusted. In a microservices architecture running on cloud infrastructure, this model is dangerously flawed. If an attacker breaches a single weak service, they can traverse the internal network unhindered to access sensitive databases or critical APIs.</p>
+<p>Zero Trust architecture mandates that no entity—internal or external—should be trusted by default. Every single network transaction must be authenticated and encrypted. This is where Mutual TLS comes in.</p>
+<h2>How Mutual TLS Works</h2>
+<p>Standard TLS (often referred to as SSL) is used to secure web traffic (HTTPS). In standard TLS, only the server proves its identity to the client using an X.509 certificate. The client verifies the server&#8217;s certificate against a trusted Certificate Authority (CA) and then establishes an encrypted tunnel.</p>
+<p>In Mutual TLS, the process is bilateral. Both the client and the server must present certificates and prove their identities to each other before a connection is established. The workflow looks like this:</p>
+<ul>
+<li><strong>Client Hello:</strong> The client initiates the connection, offering supported cipher suites.</li>
+<li><strong>Server Hello &amp; Certificate:</strong> The server responds with its chosen cipher suite and presents its certificate to the client.</li>
+<li><strong>Certificate Request:</strong> Crucially, the server also sends a request demanding the client&#8217;s certificate.</li>
+<li><strong>Client Certificate &amp; Verification:</strong> The client verifies the server&#8217;s certificate, then sends its own certificate to the server.</li>
+<li><strong>Session Key Generation:</strong> The server verifies the client&#8217;s certificate. If valid, both parties generate symmetric session keys and begin encrypted communication.</li>
+</ul>
+<h2>Implementing mTLS with a Service Mesh</h2>
+<p>Implementing mTLS manually across dozens or hundreds of microservices is an operational nightmare. Managing certificate issuance, rotation, and revocation at scale requires specialized infrastructure. The modern approach to implementing mTLS is utilizing a Service Mesh, such as Istio, Linkerd, or Consul Connect.</p>
+<h3>The Role of the Sidecar Proxy</h3>
+<p>A Service Mesh operates by deploying a lightweight &#8220;sidecar proxy&#8221; (like Envoy) alongside every microservice container. The application code is completely unaware of mTLS. When Service A wants to communicate with Service B, it sends a standard, unencrypted HTTP request to its local sidecar proxy.</p>
+<p>The proxy intercepts the request, wraps it in an mTLS tunnel, and transmits it over the network to Service B&#8217;s proxy. Service B&#8217;s proxy terminates the mTLS connection, verifies the identity, and forwards the unencrypted HTTP request to the actual Service B application. The Service Mesh control plane automatically handles issuing short-lived certificates to these proxies and rotating them seamlessly.</p>
+<h2>Authorization Policies</h2>
+<p>mTLS provides secure authentication (proving who the service is), but you also need authorization (determining what the service is allowed to do). With a service mesh, once mTLS confirms the identity of the calling service, you can enforce strict access control policies.</p>
+<p>For example, you can write a policy stating that only the &#8220;Frontend&#8221; service is allowed to issue GET requests to the &#8220;User Profile&#8221; service, and any requests from the &#8220;Analytics&#8221; service must be blocked. Because mTLS cryptographically guarantees the identity of the caller, these policies are extremely robust.</p>
+<h2>Conclusion</h2>
+<p>Implementing Mutual TLS is a foundational step in securing a microservices architecture. By utilizing a Service Mesh to abstract the complexity of certificate management and proxy routing, organizations can achieve a true Zero Trust environment, ensuring that all internal communication is authenticated, encrypted, and authorized.</p>
+        </article>
+
+        <!-- Feedback Section -->
+        <section class="mt-xl py-lg border-t border-outline-variant flex flex-col items-center">
+            <h4 class="font-headline-md text-headline-md mb-sm text-on-surface">Was this article helpful?</h4>
+            <div class="flex gap-4">
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-primary/5 hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_up</span> Yes
+                </button>
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-error/5 hover:border-error transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_down</span> No
+                </button>
+            </div>
+        </section>
+
+        <!-- Post Navigation -->
+        <footer class="mt-lg pt-lg border-t border-outline-variant flex justify-between">
+                        <a href="/kb/configuring-auto-scaling-groups-with-terraform/" class="group flex flex-col items-start gap-1">
+                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Previous</span>
+                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:-translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Configuring Auto-scaling Groups with Terraform                </span>
+            </a>
+            
+                        <a href="/kb/troubleshooting-database-connection-pooling/" class="group flex flex-col items-end gap-1">
+                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Next</span>
+                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    Troubleshooting Database Connection Pooling                    <span class="material-symbols-outlined">arrow_forward</span>
+                </span>
+            </a>
+                    </footer>
+    </div>
+
+    <!-- Right Sidebar -->
+    <aside class="w-72 hidden xl:block sticky top-md h-fit">
+        <!-- Support CTA -->
+        <div class="bg-primary text-white p-md rounded-xl shadow-lg shadow-primary/10 relative overflow-hidden mb-md">
+            <div class="relative z-10">
+                <h5 class="font-label-md text-label-md font-bold mb-2">Still need help?</h5>
+                <p class="text-xs text-white/80 mb-4">Our expert support engineers are available 24/7 for technical assistance.</p>
+                <a href="/contact/" class="block text-center w-full bg-white text-primary py-2 rounded-lg font-label-md text-label-md font-bold hover:bg-surface-container-highest transition-colors">
+                    Open Support Ticket
+                </a>
+            </div>
+            <!-- Subtle background decoration -->
+            <div class="absolute -right-4 -bottom-4 opacity-20">
+                <span class="material-symbols-outlined text-[80px]">contact_support</span>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="mb-md">
+            <h5 class="font-label-md text-label-md font-bold text-on-surface mb-4">Related Articles</h5>
+            <ul class="space-y-4">
+                                <li>
+                    <a href="/kb/optimizing-load-balancer-latency-for-global-traffic/" class="group">
+                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Optimizing Load Balancer Latency for Global Traffic</span>
+                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
+                    </a>
+                </li>
+                                <li>
+                    <a href="/kb/configuring-auto-scaling-groups-with-terraform/" class="group">
+                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Configuring Auto-scaling Groups with Terraform</span>
+                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
+                    </a>
+                </li>
+                                <li>
+                    <a href="/kb/troubleshooting-database-connection-pooling/" class="group">
+                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Troubleshooting Database Connection Pooling</span>
+                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
+                    </a>
+                </li>
+                            </ul>
+        </div>
+    </aside>
+
+    </main>
 
 <script>
     // Simple micro-interaction for code copy

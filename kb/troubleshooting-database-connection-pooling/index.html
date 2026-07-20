@@ -315,32 +315,132 @@ tailwind.config = {
 
 <!-- Main Content Shell -->
 <main class="ml-64 mt-16 p-gutter flex gap-12 max-w-[1440px] mx-auto min-h-screen">
-<div class="max-w-3xl mx-auto px-gutter py-xl">
-<h2>What is Connection Pooling?</h2>
-        <p>A database connection pool is a cache of database connections maintained so that the connections can be reused when future requests to the database are required. This significantly reduces the overhead of establishing new connections.</p>
-<h2>Common Symptoms of Pool Exhaustion</h2>
-        <p>When the pool is configured incorrectly or under heavy load, you might see:</p>
-        <ul>
-            <li>Application timeouts and <code>504 Gateway Timeout</code> errors.</li>
-            <li>Database logs showing <code>Too many connections</code>.</li>
-            <li>Spikes in CPU usage on the application servers as threads wait for connections.</li>
-        </ul>
-<h2>Diagnostic Steps</h2>
-        <h3>1. Check Active Connections</h3>
-        <p>Run a query against your database to see how many connections are active vs. idle. For PostgreSQL:</p>
-        <pre><code>SELECT state, count(*) FROM pg_stat_activity GROUP BY state;</code></pre>
-<h3>2. Analyze Application Logs</h3>
-        <p>Look for connection acquisition timeout exceptions in your application logs. E.g., in Java/HikariCP, look for <code>Connection is not available, request timed out</code>.</p>
-<h2>Resolution Strategies</h2>
-        <p>To fix connection pooling issues:</p>
-        <ul>
-            <li><strong>Increase Pool Size:</strong> If the database can handle more concurrent queries, increase the maximum pool size.</li>
-            <li><strong>Fix Connection Leaks:</strong> Ensure that your application code always closes connections (e.g., using try-with-resources in Java or proper ORM lifecycle management).</li>
-            <li><strong>Use PgBouncer/ProxySQL:</strong> Implement a dedicated connection pooler at the infrastructure level.</li>
-        </ul>
+    
+    
+    <!-- Left Section: Article Content -->
+    <div class="flex-1 max-w-[840px]">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-lg">
+            <a href="/knowledge-base/" class="hover:text-primary transition-colors">Knowledge Base</a>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="text-on-surface font-bold">Troubleshooting Database Connection Pooling</span>
+        </nav>
 
-</div>
-</main>
+        <!-- Article Header -->
+        <header class="mb-lg">
+            <h1 class="font-display-lg text-display-lg mb-sm text-primary leading-tight">Troubleshooting Database Connection Pooling</h1>
+            <div class="flex flex-wrap gap-6 items-center text-label-md font-label-md text-on-surface-variant">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                    Last updated: Jul 2026                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">folder</span>
+                    Category: Guides
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-content font-body-md text-body-md text-on-surface-variant">
+            <p>Database connection pooling is a critical performance optimization technique for high-throughput applications. However, misconfigured connection pools are a leading cause of intermittent application failures, latency spikes, and dreaded &#8220;Too many connections&#8221; errors. In this article, we delve deep into the mechanics of connection pooling and provide strategies for troubleshooting and optimizing pool configurations.</p>
+<h2>The Mechanics of Connection Pooling</h2>
+<p>Establishing a new connection to a relational database (like PostgreSQL or MySQL) is an expensive operation. It involves network latency, TCP handshakes, authentication, and allocating memory on the database server. If a high-traffic application opens and closes a new connection for every single query, performance will grind to a halt.</p>
+<p>A connection pool mitigates this by maintaining a cache of open, reusable database connections. When the application needs to execute a query, it requests a connection from the pool. If a connection is available, it is handed over instantly. Once the query is complete, the connection is returned to the pool, rather than being closed, ready for the next request.</p>
+<h2>Common Connection Pooling Issues</h2>
+<p>While connection pools solve the overhead problem, they introduce complex concurrency challenges. Here are the most common issues engineers face:</p>
+<h3>1. Pool Exhaustion (Starvation)</h3>
+<p>Pool exhaustion occurs when all connections in the pool are currently in use, and a new incoming request must wait for a connection to become available. If the wait time exceeds the configured timeout, the application throws an error (e.g., `ConnectionTimeoutException`).</p>
+<p>This is often caused by long-running queries holding onto connections for too long, or application code failing to properly return connections to the pool (connection leaks) after an exception occurs.</p>
+<h3>2. Database Server Connection Limits</h3>
+<p>Every database server has a hard limit on the maximum number of concurrent connections it can handle (e.g., `max_connections` in PostgreSQL). In a microservices architecture, if you have 20 instances of a service, and each instance has a connection pool size of 50, the theoretical maximum concurrent connections is 1000.</p>
+<p>If this exceeds the database&#8217;s `max_connections` setting, the database will reject new connections. It is crucial to size your pools globally, ensuring the sum of all maximum pool sizes across all application instances is less than the database&#8217;s maximum limit.</p>
+<h3>3. Stale Connections</h3>
+<p>Sometimes, a connection in the pool may drop unexpectedly due to network glitches, firewall timeouts, or database restarts. If the pool hands a stale, broken connection to the application, the query will fail.</p>
+<h2>Troubleshooting and Optimization Strategies</h2>
+<h3>Implement Proper Sizing</h3>
+<p>A common misconception is that a larger pool is always better. In reality, excessively large pools cause context-switching overhead on the database server. A widely accepted formula for calculating pool size is: <strong>Connections = ((Core Count * 2) + Effective Spindle Count)</strong>. For most modern SSD-backed databases, a pool size of 10-20 per application instance is highly optimal.</p>
+<h3>Configure Validation Queries</h3>
+<p>To combat stale connections, configure your pool (e.g., HikariCP, PgBouncer) to validate connections before handing them to the application. This involves running a fast, lightweight query (like `SELECT 1`) to ensure the connection is alive. If it fails, the pool discards it and creates a fresh one.</p>
+<h3>Strict Timeout Management</h3>
+<p>Configure aggressive timeouts to prevent runaway queries from exhausting the pool:</p>
+<ul>
+<li><strong>Connection Timeout:</strong> How long the app will wait for a connection from the pool before failing. Keep this low (e.g., 2-5 seconds).</li>
+<li><strong>Idle Timeout:</strong> How long a connection can sit idle in the pool before being retired.</li>
+<li><strong>Max Lifetime:</strong> The absolute maximum time a connection can exist before being destroyed and recreated. This helps prevent subtle memory leaks on the database side.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Troubleshooting connection pooling requires a holistic view of your application architecture and database constraints. By carefully calculating pool sizes, enforcing strict timeouts, and implementing connection validation, you can ensure your database tier remains highly available and performant under massive loads.</p>
+        </article>
+
+        <!-- Feedback Section -->
+        <section class="mt-xl py-lg border-t border-outline-variant flex flex-col items-center">
+            <h4 class="font-headline-md text-headline-md mb-sm text-on-surface">Was this article helpful?</h4>
+            <div class="flex gap-4">
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-primary/5 hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_up</span> Yes
+                </button>
+                <button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-full font-label-md text-label-md hover:bg-error/5 hover:border-error transition-all">
+                    <span class="material-symbols-outlined text-[20px]">thumb_down</span> No
+                </button>
+            </div>
+        </section>
+
+        <!-- Post Navigation -->
+        <footer class="mt-lg pt-lg border-t border-outline-variant flex justify-between">
+                        <a href="/kb/implementing-mutual-tls-for-microservices/" class="group flex flex-col items-start gap-1">
+                <span class="text-xs uppercase tracking-widest text-on-surface-variant opacity-60">Previous</span>
+                <span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:-translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Implementing Mutual TLS for Microservices                </span>
+            </a>
+            
+                    </footer>
+    </div>
+
+    <!-- Right Sidebar -->
+    <aside class="w-72 hidden xl:block sticky top-md h-fit">
+        <!-- Support CTA -->
+        <div class="bg-primary text-white p-md rounded-xl shadow-lg shadow-primary/10 relative overflow-hidden mb-md">
+            <div class="relative z-10">
+                <h5 class="font-label-md text-label-md font-bold mb-2">Still need help?</h5>
+                <p class="text-xs text-white/80 mb-4">Our expert support engineers are available 24/7 for technical assistance.</p>
+                <a href="/contact/" class="block text-center w-full bg-white text-primary py-2 rounded-lg font-label-md text-label-md font-bold hover:bg-surface-container-highest transition-colors">
+                    Open Support Ticket
+                </a>
+            </div>
+            <!-- Subtle background decoration -->
+            <div class="absolute -right-4 -bottom-4 opacity-20">
+                <span class="material-symbols-outlined text-[80px]">contact_support</span>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="mb-md">
+            <h5 class="font-label-md text-label-md font-bold text-on-surface mb-4">Related Articles</h5>
+            <ul class="space-y-4">
+                                <li>
+                    <a href="/kb/optimizing-load-balancer-latency-for-global-traffic/" class="group">
+                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Optimizing Load Balancer Latency for Global Traffic</span>
+                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
+                    </a>
+                </li>
+                                <li>
+                    <a href="/kb/configuring-auto-scaling-groups-with-terraform/" class="group">
+                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Configuring Auto-scaling Groups with Terraform</span>
+                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
+                    </a>
+                </li>
+                                <li>
+                    <a href="/kb/implementing-mutual-tls-for-microservices/" class="group">
+                        <span class="block font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">Implementing Mutual TLS for Microservices</span>
+                        <span class="text-xs text-on-surface-variant">July 18, 2026</span>
+                    </a>
+                </li>
+                            </ul>
+        </div>
+    </aside>
+
+    </main>
 
 <script>
     // Simple micro-interaction for code copy
