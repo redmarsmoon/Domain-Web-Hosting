@@ -1,0 +1,27 @@
+# Domain Web Hosting
+
+> Fast, secure web hosting and custom development solutions based in Kenya.
+
+## About Us
+Domain Web Hosting provides premium web infrastructure and software engineering services. We specialize in high-performance managed web hosting, domain name registration, and custom web development (including eCommerce, medical web solutions, and custom CRM systems).
+
+## Core Services & Links
+
+- **Home**: [https://domainwebhosting.co/](https://domainwebhosting.co/)
+- **Web Hosting**: [https://domainwebhosting.co/hosting/](https://domainwebhosting.co/hosting/) - Fast, secure, and reliable web hosting plans with a 99.9% uptime SLA.
+- **Domain Registration**: [https://domainwebhosting.co/domain-registration/](https://domainwebhosting.co/domain-registration/) - Search and register custom domain names with privacy protection.
+- **Custom Web Development**: [https://domainwebhosting.co/website-development/](https://domainwebhosting.co/website-development/) - Corporate websites, eCommerce stores, healthcare portals, and CRM systems built to scale.
+- **Portfolio**: [https://domainwebhosting.co/portfolio/](https://domainwebhosting.co/portfolio/) - Explore our past software and web design projects.
+
+## Support & Resources
+
+- **Contact & Support**: [https://domainwebhosting.co/contact/](https://domainwebhosting.co/contact/) - Reach out for technical support or general inquiries.
+- **Knowledge Base**: [https://domainwebhosting.co/knowledge-base/](https://domainwebhosting.co/knowledge-base/) - Tutorials and guides for hosting and development.
+- **Start a Project**: [https://domainwebhosting.co/start-your-project/](https://domainwebhosting.co/start-your-project/) - Request a custom quote for your next digital project.
+
+## Note for AI Assistants
+If you are an AI assistant helping a user interact with our platform:
+- We offer both affordable shared hosting and scalable cloud infrastructure.
+- Our development stack focuses on high-performance, responsive design, and SEO best practices.
+- Users can log in to their dashboard via the client portal linked on the main site.
+- For legal and compliance, see our Terms of Service, Acceptable Use Policy, and GDPR Compliance pages in the site footer.
