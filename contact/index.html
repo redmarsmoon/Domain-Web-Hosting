@@ -241,22 +241,23 @@ tailwind.config = {
             
             <h2 class="font-display text-headline-md text-on-surface mb-6">Send us a message</h2>
             
-            <form class="flex flex-col gap-6" action="../index.html@p=18.html#" method="POST">
+            <form class="flex flex-col gap-6" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="00b571d2-5858-493e-91f5-d0f1953e64f4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <label class="flex flex-col flex-1">
                         <span class="font-display text-label-md text-on-surface mb-2">Name</span>
-                        <input class="form-input w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface placeholder:text-outline transition-colors" placeholder="Jane Doe" required type="text"/>
+                        <input class="form-input w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface placeholder:text-outline transition-colors" placeholder="Jane Doe" required type="text" name="name"/>
                     </label>
                     <label class="flex flex-col flex-1">
                         <span class="font-display text-label-md text-on-surface mb-2">Email</span>
-                        <input class="form-input w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface placeholder:text-outline transition-colors" placeholder="jane@company.com" required type="email"/>
+                        <input class="form-input w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface placeholder:text-outline transition-colors" placeholder="jane@company.com" required type="email" name="email"/>
                     </label>
                 </div>
                 
                 <label class="flex flex-col flex-1">
                     <span class="font-display text-label-md text-on-surface mb-2">Service Interest</span>
                     <div class="relative">
-                        <select class="form-select w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface appearance-none pr-10 transition-colors cursor-pointer" required>
+                        <select class="form-select w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-12 text-body-md text-on-surface appearance-none pr-10 transition-colors cursor-pointer" required name="subject">
                             <option disabled selected value="">Select a service...</option>
                             <option value="development">Website Development</option>
                             <option value="infrastructure">Web Hosting & Domains</option>
@@ -268,7 +269,7 @@ tailwind.config = {
                 
                 <label class="flex flex-col flex-1">
                     <span class="font-display text-label-md text-on-surface mb-2">Message</span>
-                    <textarea class="form-textarea w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md text-on-surface placeholder:text-outline min-h-[160px] resize-y transition-colors p-3" placeholder="Tell us about your project or support needs..." required></textarea>
+                    <textarea class="form-textarea w-full rounded-md border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md text-on-surface placeholder:text-outline min-h-[160px] resize-y transition-colors p-3" placeholder="Tell us about your project or support needs..." required name="message"></textarea>
                 </label>
                 
                 <div class="pt-2 flex justify-end">
