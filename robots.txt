@@ -1,5 +1,7 @@
 User-agent: *
+Allow: /
+Disallow: /wp-json/
 Disallow: /wp-admin/
-Allow: /wp-admin/admin-ajax.php
+Disallow: /feed/
 
-Sitemap: http://domain-web-hosting.local/wp-sitemap.xml
+Sitemap: https://domainwebhosting.co/sitemap.xml
