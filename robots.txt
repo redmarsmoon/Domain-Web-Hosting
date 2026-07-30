@@ -1,7 +1,4 @@
 User-agent: *
-Allow: /
 Disallow: /wp-json/
-Disallow: /wp-admin/
-Disallow: /feed/
 
 Sitemap: https://domainwebhosting.co/sitemap.xml
