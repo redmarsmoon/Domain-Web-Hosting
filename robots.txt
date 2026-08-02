@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /wp-json/
 
-Sitemap: https://domainwebhosting.co/sitemap.xml
+Sitemap: https://duara.dev/sitemap.xml

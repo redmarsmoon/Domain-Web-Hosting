@@ -1,11 +1,11 @@
-# Domain Web Hosting - Static Website
+# Duara - Static Website
 
-This is the fully exported, static HTML version of the Domain Web Hosting WordPress website. It was automatically crawled and mirrored from the live WordPress setup and is fully optimized for Cloudflare Pages.
+This is the fully exported, static HTML version of the Duara website. It was automatically crawled and mirrored from the live WordPress setup and is fully optimized for Cloudflare Pages.
 
 ## Features
 - **High-Fidelity Export:** Contains exactly what the WordPress website renders.
 - **Self-Contained:** All assets (CSS, JS, images from `wp-content`) are downloaded locally.
-- **Relative Links:** All internal navigation links have been rewritten to work as a standalone static site.
+- **Link Style:** Page-to-page navigation uses root-relative links (`/hosting/`), while assets use paths relative to each page's depth. The site therefore needs to be served from a domain root; opening a file directly from disk will load styling but will not navigate.
 
 ## Deployment Instructions (Cloudflare Pages)
 
@@ -17,3 +17,9 @@ This is the fully exported, static HTML version of the Domain Web Hosting WordPr
    - **Build command:** (leave empty)
    - **Build output directory:** `/` (or leave empty)
 5. Click **Save and Deploy**. Cloudflare will instantly build and deploy the site globally across its Edge network.
+
+## Domain
+
+The site is branded **Duara** and canonicalises to `https://duara.dev`. It was previously `domainwebhosting.co`.
+
+The repository name, the `wp-content/themes/domain-web-hosting-theme/` directory and the `dwh-` asset handles intentionally retain the old name. The theme folder is a real directory that every asset path points at, so renaming it in markup without moving the folder would break every stylesheet, script and image on the site.
