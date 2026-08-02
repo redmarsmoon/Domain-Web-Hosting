@@ -8,7 +8,7 @@ Version: 1.0.0
 Text Domain: domain-web-hosting
 */
 
-body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+body { font-family: 'Inter', sans-serif; background-color: #f6faf8; }
 .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
@@ -31,9 +31,9 @@ body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
 
 /* Managed Hosting Page Styles */
 .bento-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-.bento-card:hover { border-color: #0052ff; transform: translateY(-2px); }
+.bento-card:hover { border-color: #2f6f68; transform: translateY(-2px); }
 .text-gradient {
-    background: linear-gradient(135deg, #003ec7 0%, #712ae2 100%);
+    background: linear-gradient(135deg, #2b5551 0%, #1d7d70 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -57,26 +57,26 @@ details > summary::-webkit-details-marker {
 
 .flat-plus-card {
     background-color: #ffffff; /* surface-container-lowest */
-    border: 1px solid #e0e3e5; /* surface-variant */
+    border: 1px solid #dee6e3; /* surface-variant */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
     transition: all 0.3s ease;
 }
 
 .flat-plus-card:hover {
-    border-color: #003ec7; /* primary */
+    border-color: #2b5551; /* primary */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
     transform: translateY(-2px);
 }
 
 .filter-btn.active {
-    background-color: #0052ff; /* primary-container */
+    background-color: #2f6f68; /* primary-container */
     color: #ffffff; /* on-primary-container */
     font-weight: 500;
 }
 
 .soft-fill-chip {
     background-color: rgba(0, 43, 146, 0.1); /* primary with 10% opacity */
-    color: #003ec7; /* primary */
+    color: #2b5551; /* primary */
 }
 
 /* About Us Page Styles */
@@ -88,7 +88,7 @@ details > summary::-webkit-details-marker {
 
 /* Business Websites Page Styles */
 .process-line {
-    background: linear-gradient(to bottom, #004ced 0%, #7c3aed 100%);
+    background: linear-gradient(to bottom, #375c58 0%, #24796b 100%);
 }
 
 /* eCommerce Development Page Styles */
@@ -112,7 +112,7 @@ details > summary::-webkit-details-marker {
     background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-    background: #002b92;
+    background: #22443f;
     border-radius: 4px;
 }
 
@@ -124,7 +124,7 @@ details > summary::-webkit-details-marker {
     right: -50%;
     width: 100%;
     height: 1px;
-    background: #c4c5d7;
+    background: #c2cecb;
     z-index: 0;
 }
 @media (max-width: 768px) {
@@ -144,7 +144,7 @@ details > summary::-webkit-details-marker {
     box-shadow: 0 4px 24px -4px rgba(0, 43, 146, 0.05);
 }
 .mesh-bg {
-    background-color: #fbf8ff;
+    background-color: #f8fbfa;
     background-image: 
         radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.05) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(0, 43, 146, 0.05) 0px, transparent 50%);
@@ -155,7 +155,7 @@ details > summary::-webkit-details-marker {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card-hover:hover {
-    border-color: #004ced;
+    border-color: #375c58;
     transform: translateY(-2px);
 }
 
@@ -164,7 +164,7 @@ details > summary::-webkit-details-marker {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card-gradient-hover:hover {
-    border-color: #004ced;
+    border-color: #375c58;
     background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(243,242,254,1) 100%);
 }
 
@@ -173,7 +173,7 @@ details > summary::-webkit-details-marker {
     text-shadow: 0 4px 8px rgba(0, 43, 146, 0.1);
 }
 .timeline-path {
-    background-image: radial-gradient(circle at center, #003ec7 1px, transparent 1px);
+    background-image: radial-gradient(circle at center, #2b5551 1px, transparent 1px);
     background-size: 20px 20px;
 }
 
@@ -190,7 +190,7 @@ details > summary::-webkit-details-marker {
 /* Business Hosting Page Styles */
 .elevation-surface-1 {
     background-color: #ffffff;
-    border: 1px solid #c4c5d7;
+    border: 1px solid #c2cecb;
     box-shadow: 0 4px 12px rgba(0, 43, 146, 0.02);
 }
 .shimmer {
@@ -209,5 +209,5 @@ details > summary::-webkit-details-marker {
     transition: border-color 0.3s ease;
 }
 .bento-item:hover {
-    border-color: #002b92;
+    border-color: #22443f;
 }
