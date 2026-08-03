@@ -276,28 +276,148 @@ tailwind.config = {
         </div>
     </div>
 </header>
-<main class="flex-grow pt-8">
+<main class="flex-grow">
 
-    <section class="py-xl max-w-container-max mx-auto px-gutter">
-        <nav class="mb-8 text-xs text-on-surface-variant" aria-label="Breadcrumb">
-            <a class="hover:text-primary" href="/">Home</a>
-            <span class="mx-2">/</span>
-            <a class="hover:text-primary" href="/ai-events/">AI Events</a>
-            <span class="mx-2">/</span>
-            <span class="text-on-surface">Event Calendar</span>
-        </nav>
-        <div class="max-w-3xl">
-            <span class="text-tertiary font-mono-sm font-bold uppercase tracking-widest mb-sm block">AI Events</span>
-            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">Event Calendar</h1>
-            <p class="text-on-surface-variant font-body-lg mb-8">Nothing is publicly scheduled at the moment. Here is how to hear when it is.</p>
-            <div class="flex flex-col sm:flex-row gap-sm">
-                <a href="/start-your-project/" class="font-label-md text-label-md px-6 py-3 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95 inline-block">Book a free strategy call</a>
-                <a href="/ai-events/" class="font-label-md text-label-md px-6 py-3 border border-outline-variant text-on-surface rounded-xl hover:bg-surface-container-low transition-all inline-block">All AI Events</a>
+    <section class="relative pt-xl pb-lg px-gutter max-w-container-max mx-auto overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-md items-center">
+            <div class="lg:col-span-6 space-y-6 z-10">
+                <nav class="text-xs text-on-surface-variant" aria-label="Breadcrumb">
+                    <a class="hover:text-primary" href="/">Home</a><span class="mx-2">/</span><a class="hover:text-primary" href="/ai-events/">AI Events</a><span class="mx-2">/</span><span class="text-on-surface">Session</span>
+                </nav>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="font-label-md text-label-md text-primary font-semibold">Scheduling</span>
+                </div>
+                <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface tracking-tight">
+                    Nothing scheduled publicly. <br class="hidden md:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Here is how to book.</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Most of what we run is arranged for one organisation rather than sold as public tickets. That is deliberate, because a session built around your own work is worth more than a general one.</p>
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-md hover:scale-[1.02] transition-all duration-200 shadow-md" href="#sessions">Browse formats</a>
+                    <a class="bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md px-6 py-3 rounded-md hover:border-primary hover:text-primary transition-all" href="/start-your-project/">Request a session</a>
+                </div>
+            </div>
+            <div class="lg:col-span-6 relative mt-12 lg:mt-0 h-[340px] md:h-[440px] w-full rounded-2xl overflow-hidden border border-outline-variant/30 shadow-2xl shadow-primary/5 group bg-inverse-surface">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent-mint opacity-90 transform group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="absolute inset-0 opacity-20">
+                    <div class="grid grid-cols-6 h-full w-full">
+                        <div class="border-r border-white/30"></div><div class="border-r border-white/30"></div><div class="border-r border-white/30"></div><div class="border-r border-white/30"></div><div class="border-r border-white/30"></div><div></div>
+                    </div>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-tr from-surface-container-lowest/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6">
+                    <p class="font-mono-sm text-white/80 uppercase tracking-widest text-xs mb-1">Duara AI Events</p>
+                    <p class="font-headline-md text-white">Session</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-xl bg-surface-container-lowest border-y border-outline-variant/30">
+    <section class="border-y border-outline-variant/30 bg-surface">
+        <div class="max-w-container-max mx-auto px-gutter py-8 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-outline-variant/30">
+            <div class="text-center px-4">
+                <p class="font-headline-md text-headline-md text-primary">None listed</p>
+                <p class="font-label-md text-label-md text-on-surface-variant mt-2">Public dates</p>
+            </div>
+            <div class="text-center px-4">
+                <p class="font-headline-md text-headline-md text-primary">Arranged on request</p>
+                <p class="font-label-md text-label-md text-on-surface-variant mt-2">Private sessions</p>
+            </div>
+            <div class="text-center px-4">
+                <p class="font-headline-md text-headline-md text-primary">On site, remote or hybrid</p>
+                <p class="font-label-md text-label-md text-on-surface-variant mt-2">Delivery</p>
+            </div>
+            <div class="text-center px-4">
+                <p class="font-headline-md text-headline-md text-primary">A few weeks typically</p>
+                <p class="font-label-md text-label-md text-on-surface-variant mt-2">Notice</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-xl px-gutter max-w-container-max mx-auto" id="sessions">
+        <div class="mb-12 md:flex md:justify-between md:items-end">
+            <div class="max-w-2xl">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Formats you can book</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">No public dates are listed at the moment. These are the formats we run, arranged around your group. Pick one and we will confirm dates, price and payment details.</p>
+            </div>
+            <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
+                <span class="px-4 py-2 rounded-full bg-surface-container-high font-label-md text-label-md text-on-surface">All formats</span>
+                <span class="px-4 py-2 rounded-full border border-outline-variant font-label-md text-label-md text-on-surface-variant">On site</span>
+                <span class="px-4 py-2 rounded-full border border-outline-variant font-label-md text-label-md text-on-surface-variant">Remote</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+            <div class="group flex flex-col bg-surface-container-lowest border border-outline-variant/60 rounded-xl overflow-hidden hover:border-primary hover:shadow-lg hover:shadow-primary/5 transition-all">
+                <div class="p-6 flex-grow space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary/10 text-secondary font-mono-sm font-semibold">Request</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Request a session</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Tell us the audience, rough numbers and what you want them to leave able to do, and we will quote.</p>
+                    <div class="pt-4 space-y-2 border-t border-outline-variant/30">
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">schedule</span>
+                            <span class="font-label-md text-label-md">Arranged with you</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">location_on</span>
+                            <span class="font-label-md text-label-md">On site, remote or hybrid</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 mt-auto">
+                    <button type="button" data-open-booking data-session="Request a session" class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-md hover:shadow-lg transition-all active:scale-[0.98]">Reserve your place</button>
+                </div>
+            </div>
+            <div class="group flex flex-col bg-surface-container-lowest border border-outline-variant/60 rounded-xl overflow-hidden hover:border-primary hover:shadow-lg hover:shadow-primary/5 transition-all">
+                <div class="p-6 flex-grow space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary/10 text-secondary font-mono-sm font-semibold">Notify</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Be told about open dates</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">We will let you know when an open session is arranged, which happens occasionally rather than to a schedule.</p>
+                    <div class="pt-4 space-y-2 border-t border-outline-variant/30">
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">schedule</span>
+                            <span class="font-label-md text-label-md">When arranged</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">location_on</span>
+                            <span class="font-label-md text-label-md">Usually Nairobi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 mt-auto">
+                    <button type="button" data-open-booking data-session="Be told about open dates" class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-md hover:shadow-lg transition-all active:scale-[0.98]">Reserve your place</button>
+                </div>
+            </div>
+            <div class="group flex flex-col bg-surface-container-lowest border border-outline-variant/60 rounded-xl overflow-hidden hover:border-primary hover:shadow-lg hover:shadow-primary/5 transition-all">
+                <div class="p-6 flex-grow space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary/10 text-secondary font-mono-sm font-semibold">Series</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Recurring programme</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">For organisations wanting sessions on a regular basis rather than one off.</p>
+                    <div class="pt-4 space-y-2 border-t border-outline-variant/30">
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">schedule</span>
+                            <span class="font-label-md text-label-md">Ongoing</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">location_on</span>
+                            <span class="font-label-md text-label-md">On site or hybrid</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 mt-auto">
+                    <button type="button" data-open-booking data-session="Recurring programme" class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-md hover:shadow-lg transition-all active:scale-[0.98]">Reserve your place</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="py-xl bg-surface-container-lowest border-y border-outline-variant/30">
         <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-3 gap-xl">
             <div class="lg:col-span-2">
                 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">What this is</h2>
@@ -316,53 +436,7 @@ tailwind.config = {
         </div>
     </section>
 
-    <section class="py-xl max-w-container-max mx-auto px-gutter">
-        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">What you get</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-            <div class="p-6 rounded-2xl border border-outline-variant/30 bg-surface-container-lowest">
-                <p class="text-on-surface text-body-md">Notification when open sessions are arranged</p>
-            </div>
-            <div class="p-6 rounded-2xl border border-outline-variant/30 bg-surface-container-lowest">
-                <p class="text-on-surface text-body-md">A quote for a session run for your organisation</p>
-            </div>
-            <div class="p-6 rounded-2xl border border-outline-variant/30 bg-surface-container-lowest">
-                <p class="text-on-surface text-body-md">Options for on site, remote or hybrid</p>
-            </div>
-            <div class="p-6 rounded-2xl border border-outline-variant/30 bg-surface-container-lowest">
-                <p class="text-on-surface text-body-md">Honest advice on which format suits your group</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-xl bg-inverse-surface text-surface">
-        <div class="max-w-container-max mx-auto px-gutter">
-            <h2 class="font-headline-lg text-headline-lg mb-12">How we work</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
-                <div>
-                    <span class="text-primary font-mono-sm block mb-3">01</span>
-                    <h3 class="font-headline-md mb-2">Tell Us the Audience</h3>
-                    <p class="text-surface-variant text-body-md">Who is attending, what they already know, and what you want them to leave able to do.</p>
-                </div>
-                <div>
-                    <span class="text-primary font-mono-sm block mb-3">02</span>
-                    <h3 class="font-headline-md mb-2">We Build the Session</h3>
-                    <p class="text-surface-variant text-body-md">Material is written around your people and your work rather than pulled off a shelf.</p>
-                </div>
-                <div>
-                    <span class="text-primary font-mono-sm block mb-3">03</span>
-                    <h3 class="font-headline-md mb-2">Running It</h3>
-                    <p class="text-surface-variant text-body-md">On site, remote or hybrid, in whatever format suits the group.</p>
-                </div>
-                <div>
-                    <span class="text-primary font-mono-sm block mb-3">04</span>
-                    <h3 class="font-headline-md mb-2">Afterwards</h3>
-                    <p class="text-surface-variant text-body-md">Material is left with attendees, and we check what actually changed a few weeks later.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-xl max-w-container-max mx-auto px-gutter">
+<section class="py-xl max-w-container-max mx-auto px-gutter">
         <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Frequently Asked Questions</h2>
         <div class="border-b border-outline-variant/30 py-6">
             <h3 class="font-headline-md text-headline-md text-on-surface mb-3">Why is the calendar empty?</h3>
@@ -373,36 +447,7 @@ tailwind.config = {
             <p class="text-on-surface-variant text-body-md max-w-3xl">Get in touch with the audience, rough numbers and what you want them to leave able to do, and we will quote.</p>
         </div>
     </section>
-
-
-    <!-- Reserve a place -->
-    <section class="py-xl bg-surface-container-lowest border-y border-outline-variant/30">
-        <div class="max-w-container-max mx-auto px-gutter">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Reserve a place</h2>
-            <p class="text-on-surface-variant max-w-2xl mb-8">Nothing is publicly scheduled at the moment. Register your interest and we will confirm dates, payment details and your place by SMS.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
-                <div class="group flex flex-col bg-surface border border-outline-variant/60 rounded-xl overflow-hidden hover:border-primary hover:shadow-lg transition-all">
-                    <div class="p-6 flex-grow space-y-4">
-                        <span class="inline-block text-xs font-bold uppercase tracking-wider text-primary">Session</span>
-                        <h3 class="font-headline-md text-headline-md text-on-surface">Reserve a session</h3>
-                        <div class="flex items-center gap-2 text-on-surface-variant">
-                            <span class="material-symbols-outlined text-[20px]">calendar_month</span>
-                            <span class="font-label-md text-label-md">Dates arranged with you</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-on-surface-variant">
-                            <span class="material-symbols-outlined text-[20px]">location_on</span>
-                            <span class="font-label-md text-label-md">On site, remote or hybrid</span>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button type="button" data-open-booking class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-md hover:shadow-lg transition-all active:scale-[0.98]">Reserve your place</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-xl bg-surface-container-low border-t border-outline-variant/30">
+<section class="py-xl bg-surface-container-low border-t border-outline-variant/30">
         <div class="max-w-container-max mx-auto px-gutter">
             <h2 class="font-headline-md text-headline-md text-on-surface mb-6">More in AI Events</h2>
             <div class="flex flex-wrap gap-2 mb-10">
@@ -417,24 +462,23 @@ tailwind.config = {
         </div>
     </section>
 
-
-    <!-- Booking and payment details -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-title">
         <div class="absolute inset-0 bg-black/50" data-close-booking></div>
         <div class="relative bg-surface-container-lowest border border-outline-variant rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
             <div class="flex items-start justify-between p-6 border-b border-outline-variant/40">
-                <h2 id="booking-title" class="font-headline-md text-headline-md text-on-surface">Reserve a session</h2>
-                <button type="button" data-close-booking aria-label="Close" class="text-on-surface-variant hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
+                <div>
+                    <h2 id="booking-title" class="font-headline-md text-headline-md text-on-surface">Reserve your place</h2>
+                    <p class="text-on-surface-variant text-body-md mt-1" data-session-name>Session</p>
+                </div>
+                <button type="button" data-close-booking aria-label="Close" class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">close</span></button>
             </div>
             <div class="p-6 space-y-6">
                 <div class="rounded-xl border border-outline-variant/60 p-4">
                     <p class="text-xs uppercase tracking-wider text-primary font-bold mb-3">Payment details</p>
                     <dl class="space-y-2 text-body-md">
-                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Pay to</dt><dd class="text-on-surface font-bold">M-Pesa Paybill</dd></div>
+                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Method</dt><dd class="text-on-surface font-bold">M-Pesa Paybill</dd></div>
                         <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Paybill number</dt><dd class="text-on-surface font-bold">Confirmed on booking</dd></div>
-                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Account</dt><dd class="text-on-surface font-bold">Session</dd></div>
+                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Account</dt><dd class="text-on-surface font-bold" data-session-account>Session</dd></div>
                         <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Amount</dt><dd class="text-on-surface font-bold">Quoted for your group</dd></div>
                     </dl>
                 </div>
@@ -442,7 +486,7 @@ tailwind.config = {
                     <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">sms</span>
                     <p class="text-on-surface-variant text-body-md">Your payment confirmation and event receipt are sent to your phone by SMS once payment is received.</p>
                 </div>
-                <p class="text-on-surface-variant text-body-md">Pricing depends on group size, format and location, so we quote before taking payment. Call <a class="text-primary font-bold hover:underline" href="tel:0723658888">0723658888</a> or send us your details and we will confirm the paybill number, the amount and the date.</p>
+                <p class="text-on-surface-variant text-body-md">Price depends on group size, format and location, so we quote before taking payment. Call <a class="text-primary font-bold hover:underline" href="tel:0723658888">0723658888</a> or send your details and we will confirm the paybill, the amount and the date.</p>
                 <div class="flex flex-col sm:flex-row gap-sm">
                     <a href="/start-your-project/" class="font-label-md text-label-md px-6 py-3 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95 inline-block text-center">Send us the details</a>
                     <a href="tel:0723658888" class="font-label-md text-label-md px-6 py-3 border border-outline-variant text-on-surface rounded-xl hover:bg-surface-container-low transition-all inline-block text-center">Call 0723658888</a>
@@ -454,14 +498,17 @@ tailwind.config = {
     (function () {
         var modal = document.getElementById('booking-modal');
         if (!modal) return;
+        var nameEl = modal.querySelector('[data-session-name]');
+        var acctEl = modal.querySelector('[data-session-account]');
         var lastFocus = null;
-        function open() {
+        function open(session) {
             lastFocus = document.activeElement;
+            if (session) { if (nameEl) nameEl.textContent = session; if (acctEl) acctEl.textContent = session; }
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
-            var close = modal.querySelector('[data-close-booking]');
-            if (close) close.focus();
+            var c = modal.querySelector('[data-close-booking]');
+            if (c) c.focus();
         }
         function close() {
             modal.classList.add('hidden');
@@ -470,11 +517,9 @@ tailwind.config = {
             if (lastFocus) lastFocus.focus();
         }
         document.querySelectorAll('[data-open-booking]').forEach(function (b) {
-            b.addEventListener('click', open);
+            b.addEventListener('click', function () { open(b.getAttribute('data-session')); });
         });
-        modal.querySelectorAll('[data-close-booking]').forEach(function (b) {
-            b.addEventListener('click', close);
-        });
+        modal.querySelectorAll('[data-close-booking]').forEach(function (b) { b.addEventListener('click', close); });
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
         });
