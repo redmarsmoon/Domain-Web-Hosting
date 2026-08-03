@@ -374,6 +374,34 @@ tailwind.config = {
         </div>
     </section>
 
+
+    <!-- Reserve a place -->
+    <section class="py-xl bg-surface-container-lowest border-y border-outline-variant/30">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Reserve a place</h2>
+            <p class="text-on-surface-variant max-w-2xl mb-8">Nothing is publicly scheduled at the moment. Register your interest and we will confirm dates, payment details and your place by SMS.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+                <div class="group flex flex-col bg-surface border border-outline-variant/60 rounded-xl overflow-hidden hover:border-primary hover:shadow-lg transition-all">
+                    <div class="p-6 flex-grow space-y-4">
+                        <span class="inline-block text-xs font-bold uppercase tracking-wider text-primary">Session</span>
+                        <h3 class="font-headline-md text-headline-md text-on-surface">Reserve a session</h3>
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                            <span class="font-label-md text-label-md">Dates arranged with you</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[20px]">location_on</span>
+                            <span class="font-label-md text-label-md">On site, remote or hybrid</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <button type="button" data-open-booking class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-md hover:shadow-lg transition-all active:scale-[0.98]">Reserve your place</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-xl bg-surface-container-low border-t border-outline-variant/30">
         <div class="max-w-container-max mx-auto px-gutter">
             <h2 class="font-headline-md text-headline-md text-on-surface mb-6">More in AI Events</h2>
@@ -388,6 +416,70 @@ tailwind.config = {
             <a href="/start-your-project/" class="font-label-md text-label-md px-8 py-3 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95 inline-block">Start your project</a>
         </div>
     </section>
+
+
+    <!-- Booking and payment details -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+        <div class="absolute inset-0 bg-black/50" data-close-booking></div>
+        <div class="relative bg-surface-container-lowest border border-outline-variant rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div class="flex items-start justify-between p-6 border-b border-outline-variant/40">
+                <h2 id="booking-title" class="font-headline-md text-headline-md text-on-surface">Reserve a session</h2>
+                <button type="button" data-close-booking aria-label="Close" class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="p-6 space-y-6">
+                <div class="rounded-xl border border-outline-variant/60 p-4">
+                    <p class="text-xs uppercase tracking-wider text-primary font-bold mb-3">Payment details</p>
+                    <dl class="space-y-2 text-body-md">
+                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Pay to</dt><dd class="text-on-surface font-bold">M-Pesa Paybill</dd></div>
+                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Paybill number</dt><dd class="text-on-surface font-bold">Confirmed on booking</dd></div>
+                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Account</dt><dd class="text-on-surface font-bold">Session</dd></div>
+                        <div class="flex justify-between gap-4"><dt class="text-on-surface-variant">Amount</dt><dd class="text-on-surface font-bold">Quoted for your group</dd></div>
+                    </dl>
+                </div>
+                <div class="flex items-start gap-3 rounded-xl bg-primary/5 border border-primary/20 p-4">
+                    <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">sms</span>
+                    <p class="text-on-surface-variant text-body-md">Your payment confirmation and event receipt are sent to your phone by SMS once payment is received.</p>
+                </div>
+                <p class="text-on-surface-variant text-body-md">Pricing depends on group size, format and location, so we quote before taking payment. Call <a class="text-primary font-bold hover:underline" href="tel:0723658888">0723658888</a> or send us your details and we will confirm the paybill number, the amount and the date.</p>
+                <div class="flex flex-col sm:flex-row gap-sm">
+                    <a href="/start-your-project/" class="font-label-md text-label-md px-6 py-3 bg-primary text-on-primary rounded-xl hover:shadow-lg transition-all active:scale-95 inline-block text-center">Send us the details</a>
+                    <a href="tel:0723658888" class="font-label-md text-label-md px-6 py-3 border border-outline-variant text-on-surface rounded-xl hover:bg-surface-container-low transition-all inline-block text-center">Call 0723658888</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var modal = document.getElementById('booking-modal');
+        if (!modal) return;
+        var lastFocus = null;
+        function open() {
+            lastFocus = document.activeElement;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            var close = modal.querySelector('[data-close-booking]');
+            if (close) close.focus();
+        }
+        function close() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+            if (lastFocus) lastFocus.focus();
+        }
+        document.querySelectorAll('[data-open-booking]').forEach(function (b) {
+            b.addEventListener('click', open);
+        });
+        modal.querySelectorAll('[data-close-booking]').forEach(function (b) {
+            b.addEventListener('click', close);
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+        });
+    })();
+    </script>
 
 </main>
 
