@@ -353,7 +353,7 @@ tailwind.config = {
 
         <!-- Article Body -->
         <article class="article-content font-body-md text-body-md text-on-surface-variant">
-            <p>Database connection pooling is a critical performance optimization technique for high-throughput applications. However, misconfigured connection pools are a leading cause of intermittent application failures, latency spikes, and dreaded “Too many connections” errors. In this article, we delve deep into the mechanics of connection pooling and provide strategies for troubleshooting and optimizing pool configurations.</p>
+            <p>Database connection pooling is a critical performance optimization technique for high-throughput applications. However, misconfigured connection pools are a leading cause of intermittent application failures, latency spikes, and dreaded "Too many connections" errors. In this article, we delve deep into the mechanics of connection pooling and provide strategies for troubleshooting and optimizing pool configurations.</p>
 <h2>The Mechanics of Connection Pooling</h2>
 <p>Establishing a new connection to a relational database (like PostgreSQL or MySQL) is an expensive operation. It involves network latency, TCP handshakes, authentication, and allocating memory on the database server. If a high-traffic application opens and closes a new connection for every single query, performance will grind to a halt.</p>
 <p>A connection pool mitigates this by maintaining a cache of open, reusable database connections. When the application needs to execute a query, it requests a connection from the pool. If a connection is available, it is handed over instantly. Once the query is complete, the connection is returned to the pool, rather than being closed, ready for the next request.</p>
@@ -364,7 +364,7 @@ tailwind.config = {
 <p>This is often caused by long-running queries holding onto connections for too long, or application code failing to properly return connections to the pool (connection leaks) after an exception occurs.</p>
 <h3>2. Database Server Connection Limits</h3>
 <p>Every database server has a hard limit on the maximum number of concurrent connections it can handle (e.g., `max_connections` in PostgreSQL). In a microservices architecture, if you have 20 instances of a service, and each instance has a connection pool size of 50, the theoretical maximum concurrent connections is 1000.</p>
-<p>If this exceeds the database’s `max_connections` setting, the database will reject new connections. It is crucial to size your pools globally, ensuring the sum of all maximum pool sizes across all application instances is less than the database’s maximum limit.</p>
+<p>If this exceeds the database's `max_connections` setting, the database will reject new connections. It is crucial to size your pools globally, ensuring the sum of all maximum pool sizes across all application instances is less than the database's maximum limit.</p>
 <h3>3. Stale Connections</h3>
 <p>Sometimes, a connection in the pool may drop unexpectedly due to network glitches, firewall timeouts, or database restarts. If the pool hands a stale, broken connection to the application, the query will fail.</p>
 <h2>Troubleshooting and Optimization Strategies</h2>

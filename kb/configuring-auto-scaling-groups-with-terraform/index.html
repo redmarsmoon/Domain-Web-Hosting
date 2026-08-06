@@ -353,7 +353,7 @@ tailwind.config = {
 
         <!-- Article Body -->
         <article class="article-content font-body-md text-body-md text-on-surface-variant">
-            <p>Infrastructure as Code (IaC) has revolutionized how we provision and manage cloud resources. HashiCorp’s Terraform is an industry standard for defining infrastructure declaratively. In this guide, we will walk through the process of configuring robust Auto-scaling Groups (ASGs) using Terraform, ensuring your applications can dynamically respond to traffic fluctuations while maintaining cost efficiency.</p>
+            <p>Infrastructure as Code (IaC) has revolutionized how we provision and manage cloud resources. HashiCorp's Terraform is an industry standard for defining infrastructure declaratively. In this guide, we will walk through the process of configuring robust Auto-scaling Groups (ASGs) using Terraform, ensuring your applications can dynamically respond to traffic fluctuations while maintaining cost efficiency.</p>
 <h2>Understanding Auto-scaling Mechanics</h2>
 <p>An Auto-scaling Group is a logical grouping of compute instances (like AWS EC2 or Google Cloud Compute Engine) that share similar characteristics. The primary purpose of an ASG is to automatically adjust the number of running instances based on predefined conditions. This ensures you have enough compute power during peak traffic and minimizes costs during idle periods.</p>
 <p>Effective auto-scaling relies on metrics (such as CPU utilization, memory usage, or network I/O) and alarms. When a metric crosses a threshold (e.g., CPU exceeds 75% for 3 minutes), an alarm triggers a scaling policy to launch new instances (scale out) or terminate existing ones (scale in).</p>

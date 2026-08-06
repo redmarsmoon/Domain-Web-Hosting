@@ -13,7 +13,7 @@ const pagesData = {
             { icon: 'record_voice_over', title: 'Audio Podcast Integration', desc: 'Upload weekly audio sermons and allow members to listen on-demand from any device.' }
         ],
         trustTitle: 'A Trusted Digital Sanctuary',
-        trustDesc: 'We build secure, respectful, and highly accessible websites for religious institutions. Protect member data while expanding your ministry’s reach across Kenya.',
+        trustDesc: 'We build secure, respectful, and highly accessible websites for religious institutions. Protect member data while expanding your ministry's reach across Kenya.',
         trustList: ['Member Registration Portals', 'Automated SMS Reminders', 'Secure Media Hosting']
     },
     'educational-institution-web-solutions/index.html': {
@@ -26,7 +26,7 @@ const pagesData = {
             { icon: 'campaign', title: 'Notice Boards', desc: 'Digital notice boards for urgent school announcements, newsletters, and exam schedules.' }
         ],
         trustTitle: 'Built for Academic Excellence',
-        trustDesc: 'Your institution’s website is often the first impression for prospective parents. We build authoritative, fast-loading sites that reflect your academic standards.',
+        trustDesc: 'Your institution's website is often the first impression for prospective parents. We build authoritative, fast-loading sites that reflect your academic standards.',
         trustList: ['Parent-Teacher Communication Hubs', 'High-Traffic Capability during Results', 'KRA & MOE Compliance Friendly']
     },
     'hotel-hospitality-web-solutions/index.html': {

@@ -355,26 +355,26 @@ tailwind.config = {
         <article class="article-content font-body-md text-body-md text-on-surface-variant">
             <p>As microservice architectures become increasingly complex, securing the communication between internal services is just as critical as securing the public perimeter. Mutual TLS (mTLS) is the gold standard for Zero Trust networking. In this comprehensive guide, we explain the mechanics of mTLS and how to implement it effectively within a modern microservices ecosystem.</p>
 <h2>The Need for Zero Trust Networking</h2>
-<p>Historically, corporate networks operated on a “castle-and-moat” model. Once a request bypassed the external firewall, it was largely trusted. In a microservices architecture running on cloud infrastructure, this model is dangerously flawed. If an attacker breaches a single weak service, they can traverse the internal network unhindered to access sensitive databases or critical APIs.</p>
+<p>Historically, corporate networks operated on a "castle-and-moat" model. Once a request bypassed the external firewall, it was largely trusted. In a microservices architecture running on cloud infrastructure, this model is dangerously flawed. If an attacker breaches a single weak service, they can traverse the internal network unhindered to access sensitive databases or critical APIs.</p>
 <p>Zero Trust architecture mandates that no entity, internal or external, should be trusted by default. Every single network transaction must be authenticated and encrypted. This is where Mutual TLS comes in.</p>
 <h2>How Mutual TLS Works</h2>
-<p>Standard TLS (often referred to as SSL) is used to secure web traffic (HTTPS). In standard TLS, only the server proves its identity to the client using an X.509 certificate. The client verifies the server’s certificate against a trusted Certificate Authority (CA) and then establishes an encrypted tunnel.</p>
+<p>Standard TLS (often referred to as SSL) is used to secure web traffic (HTTPS). In standard TLS, only the server proves its identity to the client using an X.509 certificate. The client verifies the server's certificate against a trusted Certificate Authority (CA) and then establishes an encrypted tunnel.</p>
 <p>In Mutual TLS, the process is bilateral. Both the client and the server must present certificates and prove their identities to each other before a connection is established. The workflow looks like this:</p>
 <ul>
 <li><strong>Client Hello:</strong> The client initiates the connection, offering supported cipher suites.</li>
 <li><strong>Server Hello &amp; Certificate:</strong> The server responds with its chosen cipher suite and presents its certificate to the client.</li>
-<li><strong>Certificate Request:</strong> Crucially, the server also sends a request demanding the client’s certificate.</li>
-<li><strong>Client Certificate &amp; Verification:</strong> The client verifies the server’s certificate, then sends its own certificate to the server.</li>
-<li><strong>Session Key Generation:</strong> The server verifies the client’s certificate. If valid, both parties generate symmetric session keys and begin encrypted communication.</li>
+<li><strong>Certificate Request:</strong> Crucially, the server also sends a request demanding the client's certificate.</li>
+<li><strong>Client Certificate &amp; Verification:</strong> The client verifies the server's certificate, then sends its own certificate to the server.</li>
+<li><strong>Session Key Generation:</strong> The server verifies the client's certificate. If valid, both parties generate symmetric session keys and begin encrypted communication.</li>
 </ul>
 <h2>Implementing mTLS with a Service Mesh</h2>
 <p>Implementing mTLS manually across dozens or hundreds of microservices is an operational nightmare. Managing certificate issuance, rotation, and revocation at scale requires specialized infrastructure. The modern approach to implementing mTLS is utilizing a Service Mesh, such as Istio, Linkerd, or Consul Connect.</p>
 <h3>The Role of the Sidecar Proxy</h3>
-<p>A Service Mesh operates by deploying a lightweight “sidecar proxy” (like Envoy) alongside every microservice container. The application code is completely unaware of mTLS. When Service A wants to communicate with Service B, it sends a standard, unencrypted HTTP request to its local sidecar proxy.</p>
-<p>The proxy intercepts the request, wraps it in an mTLS tunnel, and transmits it over the network to Service B’s proxy. Service B’s proxy terminates the mTLS connection, verifies the identity, and forwards the unencrypted HTTP request to the actual Service B application. The Service Mesh control plane automatically handles issuing short-lived certificates to these proxies and rotating them seamlessly.</p>
+<p>A Service Mesh operates by deploying a lightweight "sidecar proxy" (like Envoy) alongside every microservice container. The application code is completely unaware of mTLS. When Service A wants to communicate with Service B, it sends a standard, unencrypted HTTP request to its local sidecar proxy.</p>
+<p>The proxy intercepts the request, wraps it in an mTLS tunnel, and transmits it over the network to Service B's proxy. Service B's proxy terminates the mTLS connection, verifies the identity, and forwards the unencrypted HTTP request to the actual Service B application. The Service Mesh control plane automatically handles issuing short-lived certificates to these proxies and rotating them seamlessly.</p>
 <h2>Authorization Policies</h2>
 <p>mTLS provides secure authentication (proving who the service is), but you also need authorization (determining what the service is allowed to do). With a service mesh, once mTLS confirms the identity of the calling service, you can enforce strict access control policies.</p>
-<p>For example, you can write a policy stating that only the “Frontend” service is allowed to issue GET requests to the “User Profile” service, and any requests from the “Analytics” service must be blocked. Because mTLS cryptographically guarantees the identity of the caller, these policies are extremely robust.</p>
+<p>For example, you can write a policy stating that only the "Frontend" service is allowed to issue GET requests to the "User Profile" service, and any requests from the "Analytics" service must be blocked. Because mTLS cryptographically guarantees the identity of the caller, these policies are extremely robust.</p>
 <h2>Conclusion</h2>
 <p>Implementing Mutual TLS is a foundational step in securing a microservices architecture. By utilizing a Service Mesh to abstract the complexity of certificate management and proxy routing, organizations can achieve a true Zero Trust environment, ensuring that all internal communication is authenticated, encrypted, and authorized.</p>
         </article>
