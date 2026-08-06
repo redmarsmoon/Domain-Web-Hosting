@@ -1,0 +1,242 @@
+/* Duara mobile refinements.
+ *
+ * Everything here is scoped to phone widths, so the desktop design is
+ * byte for byte what it was. Nothing changes content: this file only
+ * adjusts spacing, type scale and tap target size, and styles the mobile
+ * navigation drawer that mobile.js builds from the existing header links.
+ *
+ * Tailwind is loaded from the CDN and injects its utilities into the page
+ * at runtime, which puts them after this stylesheet in the cascade. The few
+ * rules below that have to beat a generated utility of equal specificity are
+ * marked important for that reason and no other.
+ */
+
+@media (max-width: 767px) {
+
+  /* --- Tap targets ------------------------------------------------------
+   * Every button shaped link reaches 48px. Padding is left alone and
+   * min-height does the work, so horizontal rhythm is unchanged and
+   * nothing moves on wider screens. */
+
+  /* Matched on the vertical padding utility as an exact word, which is what
+   * decides the height, and on any rounded variant, which is what makes it a
+   * button. py-4 and above already clear 48px and are left alone so card
+   * sized links keep their own layout. */
+  a[class*="rounded"][class~="py-1"],
+  a[class*="rounded"][class~="py-1.5"],
+  a[class*="rounded"][class~="py-2"],
+  a[class*="rounded"][class~="py-2.5"],
+  a[class*="rounded"][class~="py-3"],
+  button[class*="rounded"][class~="py-1"],
+  button[class*="rounded"][class~="py-1.5"],
+  button[class*="rounded"][class~="py-2"],
+  button[class*="rounded"][class~="py-2.5"],
+  button[class*="rounded"][class~="py-3"],
+  .dmn-panel a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Footer link lists are the densest tap area on the site. */
+  footer a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Social icons are 32px circles on desktop. Give them a full target. */
+  footer a[class*="w-8"][class*="h-8"] {
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+  }
+
+  /* --- Heading hierarchy ------------------------------------------------
+   * Desktop runs 64 / 32 / 24. On a 360px screen the 40px mobile display
+   * size and a 32px H2 sit too close together and long headings wrap three
+   * or four times. This opens the steps to 36 / 28 / 20, which keeps the
+   * same relationship at a size that fits. */
+
+  .text-display-lg-mobile { font-size: 36px !important; line-height: 1.15 !important; }
+  .text-display-lg        { font-size: 36px !important; line-height: 1.15 !important; }
+  .text-headline-lg       { font-size: 28px !important; line-height: 1.25 !important; }
+  .text-headline-md       { font-size: 20px !important; line-height: 1.35 !important; }
+
+  /* Thirty three section headings across the site carry a display size, which
+   * on a phone rendered them identical to the H1 above them. Held one step
+   * down so the page still reads 36 / 32 / 28 / 20 from H1 to H3. */
+  h2.text-display-lg-mobile,
+  h2.text-display-lg { font-size: 32px !important; line-height: 1.2 !important; }
+
+  /* --- Section rhythm ---------------------------------------------------
+   * Sections are 80px top and bottom almost everywhere. These few were 64,
+   * which reads as an inconsistent gap when scrolling. Element plus class
+   * beats the utility on specificity, so no important needed. */
+
+  section.py-16 { padding-top: 80px; padding-bottom: 80px; }
+  section.py-8  { padding-top: 48px; padding-bottom: 48px; }
+
+  /* Stacked two column layouts inherit an 80px gap meant for side by side
+   * columns. Once stacked that reads as a section break rather than a gap. */
+  .grid.gap-xl { gap: 48px; }
+
+  /* --- Header -----------------------------------------------------------
+   * The bar held a logo and two buttons, which overflows a 360px screen.
+   * Client Login moves into the drawer, where it is easier to hit anyway.
+   *
+   * Marked important because the tap target rule above matches this same
+   * link and carries higher specificity, so it would otherwise reinstate a
+   * display value here. */
+
+  header a[href*="my.duara.dev"] { display: none !important; }
+
+  /* The remaining action button had room for about eleven characters and
+   * wrapped onto three lines. Tighter horizontal padding and no wrapping
+   * keeps it on one line beside the logo and the menu button. */
+  header a[href*="start-your-project"] {
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* --- Overflow guard ---------------------------------------------------
+   * Long unbroken strings such as URLs in body copy were the only thing
+   * able to push the layout wider than the viewport. */
+
+  main img, main table, main pre { max-width: 100%; }
+  main p, main li, main h1, main h2, main h3 { overflow-wrap: break-word; }
+
+  /* Decorative shapes are positioned outside their section on purpose, and a
+   * 600px blob hanging off the right edge was widening the page on a phone.
+   * Clip rather than hide, so sticky and absolute children keep working and
+   * no new scroll container is created. */
+  main section { overflow-x: clip; }
+}
+
+/* --- Mobile navigation drawer -------------------------------------------
+ * Built by mobile.js from the links already in the header, so no navigation
+ * content is duplicated in the markup. Hidden entirely from 768px up, where
+ * the existing desktop nav takes over unchanged. */
+
+.dmn-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgb(0 0 0 / 0.12);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  flex: none;
+}
+.dmn-toggle:active { transform: scale(0.95); }
+.dmn-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  transition: background 0.2s ease;
+}
+.dmn-toggle span::before,
+.dmn-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease;
+}
+.dmn-toggle span::before { top: -6px; }
+.dmn-toggle span::after  { top: 6px; }
+
+.dmn-toggle[aria-expanded="true"] span { background: transparent; }
+.dmn-toggle[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
+.dmn-toggle[aria-expanded="true"] span::after  { transform: translateY(-6px) rotate(-45deg); }
+
+.dmn-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 60;
+}
+.dmn-scrim[data-open="true"] { opacity: 1; pointer-events: auto; }
+
+.dmn-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(88vw, 400px);
+  background: #fff;
+  z-index: 70;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dmn-panel[data-open="true"] { transform: translateX(0); }
+
+.dmn-panel a {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* the tap target rule centres buttons; menu rows read left */
+  text-align: left;
+  padding: 8px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #171d1c;          /* on-surface */
+  font-size: 16px;
+  line-height: 1.4;
+}
+.dmn-panel a:active { background: rgb(0 0 0 / 0.06); }
+
+.dmn-group {
+  margin-top: 16px;
+  padding: 8px 16px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(0 0 0 / 0.55);
+}
+.dmn-group:first-child { margin-top: 0; }
+
+/* When the heading is also the section landing page it has to be tappable. */
+a.dmn-group {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  text-decoration: none;
+  border-radius: 12px;
+}
+a.dmn-group:active { background: rgb(0 0 0 / 0.06); }
+
+.dmn-cta {
+  margin-top: 24px;
+  justify-content: center !important;
+  background: #375c58;     /* primary */
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+body[data-dmn-open="true"] { overflow: hidden; }
+
+/* The site has no dark mode, so the drawer deliberately has none either.
+ * A drawer that followed the system theme would not match the page behind it. */
+
+@media (min-width: 768px) {
+  .dmn-toggle, .dmn-scrim, .dmn-panel { display: none !important; }
+}
