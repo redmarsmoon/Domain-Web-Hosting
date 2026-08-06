@@ -113,6 +113,19 @@
    * Clip rather than hide, so sticky and absolute children keep working and
    * no new scroll container is created. */
   main section { overflow-x: clip; }
+
+  /* --- Collapsed auto margins -------------------------------------------
+   * The homepage hero images carry both mt-8 and mt-auto. Tailwind emits
+   * mt-auto last, so it wins, and in a stacked column with no free space
+   * auto resolves to zero. The result was an image sitting flush against
+   * the buttons above it. Restoring the numeric value the markup already
+   * asks for fixes the gap without touching desktop, where mt-auto still
+   * does real work bottom aligning the two hero images against each other. */
+
+  [class~="mt-auto"][class~="mt-4"]  { margin-top: 16px; }
+  [class~="mt-auto"][class~="mt-6"]  { margin-top: 24px; }
+  [class~="mt-auto"][class~="mt-8"]  { margin-top: 32px; }
+  [class~="mt-auto"][class~="mt-12"] { margin-top: 48px; }
 }
 
 /* --- Mobile navigation drawer -------------------------------------------
