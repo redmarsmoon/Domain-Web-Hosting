@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects.
+#
+# Pages already sends /index.html to / automatically, but as a 307 temporary
+# redirect. Search Console treats a temporary redirect as a URL worth keeping
+# and recrawling, which is why /index.html kept appearing under "Page with
+# redirect". A 301 tells it the move is permanent and to stop asking.
+/index.html / 301
