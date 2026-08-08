@@ -1,0 +1,17 @@
+# Cloudflare Workers Static Assets configuration.
+#
+# This is a static-assets-only Worker: no script, just the exported site served
+# directly. The site files live at the repository root rather than in a build
+# output directory, so `directory` points at ".".
+#
+# not_found_handling is the setting that matters here. It defaults to "none",
+# which returns a bare 404 with no body, so visitors to a missing URL saw a
+# blank page even though 404.html was deployed and correct. Cloudflare Pages
+# used to detect 404.html automatically; Workers Static Assets requires this to
+# be stated.
+name = "duaradev"
+compatibility_date = "2026-08-08"
+
+[assets]
+directory = "."
+not_found_handling = "404-page"

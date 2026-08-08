@@ -1,0 +1,30 @@
+# Files in this repository that must not be published.
+#
+# The site is served from the repository root, so anything here is public
+# unless it is listed below. Two things were already being served that should
+# not have been: the build scripts (batch1.js returned 30KB of page content
+# templates to anyone who asked) and part of the git directory, where
+# .git/config exposed the remote URL and .git/index a listing of every
+# tracked file.
+
+# Version control
+.git
+.gitignore
+
+# Build and maintenance scripts
+batch*.js
+check_live_all.js
+fix_*.js
+rewrite_*.js
+sanity_check.js
+
+# Dependencies and tooling
+node_modules
+.wrangler
+package.json
+package-lock.json
+
+# Repository and deployment files
+README.md
+wrangler.toml
+.assetsignore
